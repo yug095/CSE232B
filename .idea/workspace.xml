@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84efe265-160e-487f-87f4-4d47825dd9b6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/EvalXpath.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/xPathHelper.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/xPathBaseVisitor.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/xPathVisitor.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathBaseListener.class" afterPath="$PROJECT_DIR$/src/xPathBaseListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathLexer.class" afterPath="$PROJECT_DIR$/src/xPathLexer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathListener.class" afterPath="$PROJECT_DIR$/src/xPathListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$ApContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$ApContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser.class" afterPath="$PROJECT_DIR$/src/xPathParser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPath.g4" afterPath="$PROJECT_DIR$/src/xPath.g4" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPath.tokens" afterPath="$PROJECT_DIR$/src/xPath.tokens" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathBaseListener.java" afterPath="$PROJECT_DIR$/src/xPathBaseListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathBaseVisitor.java" afterPath="$PROJECT_DIR$/src/xPathBaseVisitor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathLexer.java" afterPath="$PROJECT_DIR$/src/xPathLexer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathLexer.tokens" afterPath="$PROJECT_DIR$/src/xPathLexer.tokens" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathListener.java" afterPath="$PROJECT_DIR$/src/xPathListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser.java" afterPath="$PROJECT_DIR$/src/xPathParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathVisitor.java" afterPath="$PROJECT_DIR$/src/xPathVisitor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/EvalXpath.java" afterPath="$PROJECT_DIR$/src/EvalXpath.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathHelper.java" afterPath="$PROJECT_DIR$/src/xPathHelper.java" />
     </list>
     <ignored path="milestone.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,7 +38,7 @@
       <file leaf-file-name="EvalVisitor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/EvalVisitor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
+            <state relative-caret-position="45">
               <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -68,27 +50,27 @@
       <file leaf-file-name="EvalXpath.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/EvalXpath.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="78" column="5" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
+            <state relative-caret-position="390">
+              <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
               <folding>
-                <element signature="e#0#3262#0" expanded="true" />
+                <element signature="e#0#3279#0" expanded="true" />
                 <element signature="imports" expanded="true" />
                 <element signature="e#1093#1094#0" expanded="true" />
                 <element signature="e#1114#1115#0" expanded="true" />
                 <element signature="e#1192#1193#0" expanded="true" />
                 <element signature="e#1213#1214#0" expanded="true" />
-                <element signature="e#2946#2947#0" expanded="true" />
-                <element signature="e#2967#2968#0" expanded="true" />
-                <element signature="e#3006#3007#0" expanded="true" />
-                <element signature="e#3027#3028#0" expanded="true" />
-                <element signature="e#3065#3066#0" expanded="true" />
-                <element signature="e#3086#3087#0" expanded="true" />
-                <element signature="e#3122#3123#0" expanded="true" />
-                <element signature="e#3143#3144#0" expanded="true" />
-                <element signature="e#3174#3175#0" expanded="true" />
-                <element signature="e#3206#3207#0" expanded="true" />
-                <element signature="e#3237#3238#0" expanded="true" />
-                <element signature="e#3258#3259#0" expanded="true" />
+                <element signature="e#2963#2964#0" expanded="true" />
+                <element signature="e#2984#2985#0" expanded="true" />
+                <element signature="e#3023#3024#0" expanded="true" />
+                <element signature="e#3044#3045#0" expanded="true" />
+                <element signature="e#3082#3083#0" expanded="true" />
+                <element signature="e#3103#3104#0" expanded="true" />
+                <element signature="e#3139#3140#0" expanded="true" />
+                <element signature="e#3160#3161#0" expanded="true" />
+                <element signature="e#3191#3192#0" expanded="true" />
+                <element signature="e#3223#3224#0" expanded="true" />
+                <element signature="e#3254#3255#0" expanded="true" />
+                <element signature="e#3275#3276#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -117,10 +99,10 @@
       <file leaf-file-name="xPathHelper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/xPathHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="33" column="28" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
+            <state relative-caret-position="240">
+              <caret line="30" column="53" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
               <folding>
-                <element signature="e#0#1178#0" expanded="true" />
+                <element signature="e#0#1186#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
@@ -171,9 +153,9 @@
         <option value="$PROJECT_DIR$/src/xPathBaseListener.java" />
         <option value="$PROJECT_DIR$/src/App.java" />
         <option value="$PROJECT_DIR$/src/EvalVisitor.java" />
-        <option value="$PROJECT_DIR$/src/xPathHelper.java" />
         <option value="$PROJECT_DIR$/src/xPath.g4" />
         <option value="$PROJECT_DIR$/src/EvalXpath.java" />
+        <option value="$PROJECT_DIR$/src/xPathHelper.java" />
       </list>
     </option>
   </component>
@@ -651,7 +633,7 @@
         <state relative-caret-position="90">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
-            <element signature="e#0#1178#0" expanded="true" />
+            <element signature="e#0#1186#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -833,17 +815,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/xPathHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="33" column="28" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#1178#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/xPathParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -876,9 +847,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/xPathHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="30" column="53" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#1186#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/EvalVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
+        <state relative-caret-position="45">
           <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -888,27 +870,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/EvalXpath.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="78" column="5" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
+        <state relative-caret-position="390">
+          <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
           <folding>
-            <element signature="e#0#3262#0" expanded="true" />
+            <element signature="e#0#3279#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#1093#1094#0" expanded="true" />
             <element signature="e#1114#1115#0" expanded="true" />
             <element signature="e#1192#1193#0" expanded="true" />
             <element signature="e#1213#1214#0" expanded="true" />
-            <element signature="e#2946#2947#0" expanded="true" />
-            <element signature="e#2967#2968#0" expanded="true" />
-            <element signature="e#3006#3007#0" expanded="true" />
-            <element signature="e#3027#3028#0" expanded="true" />
-            <element signature="e#3065#3066#0" expanded="true" />
-            <element signature="e#3086#3087#0" expanded="true" />
-            <element signature="e#3122#3123#0" expanded="true" />
-            <element signature="e#3143#3144#0" expanded="true" />
-            <element signature="e#3174#3175#0" expanded="true" />
-            <element signature="e#3206#3207#0" expanded="true" />
-            <element signature="e#3237#3238#0" expanded="true" />
-            <element signature="e#3258#3259#0" expanded="true" />
+            <element signature="e#2963#2964#0" expanded="true" />
+            <element signature="e#2984#2985#0" expanded="true" />
+            <element signature="e#3023#3024#0" expanded="true" />
+            <element signature="e#3044#3045#0" expanded="true" />
+            <element signature="e#3082#3083#0" expanded="true" />
+            <element signature="e#3103#3104#0" expanded="true" />
+            <element signature="e#3139#3140#0" expanded="true" />
+            <element signature="e#3160#3161#0" expanded="true" />
+            <element signature="e#3191#3192#0" expanded="true" />
+            <element signature="e#3223#3224#0" expanded="true" />
+            <element signature="e#3254#3255#0" expanded="true" />
+            <element signature="e#3275#3276#0" expanded="true" />
           </folding>
         </state>
       </provider>

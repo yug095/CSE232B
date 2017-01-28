@@ -28,7 +28,7 @@ import org.w3c.dom.Element;
 import java.io.File;
 public interface xPathHelper {
   NodeList absoLute(xPathParser.ApContext ctx);
-  NodeList relaTive(xPathParser.RpContext ctx);
+  NodeList relaTive(xPathParser.RpContext ctx, Node n);
   boolean filTer(xPathParser.FilterContext ctx, Node n);
   Node root(String fileName);
   NodeList children(Node n);

@@ -83,6 +83,7 @@ public class EvalXpath extends xPathBaseVisitor<NodeList>  implements xPathHelpe
     if (ctx instanceof xPathParser.CommaRpContext) {
       return visitCommaRp((xPathParser.CommaRpContext) ctx);
     }
+    return null;
   }
   public boolean filTer(xPathParser.FilterContext ctx, Node n) {
     return true;
