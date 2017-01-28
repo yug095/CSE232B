@@ -39,9 +39,18 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
   @Override
   public List<Node> visitApsl(xPathParser.ApslContext ctx) {
     String fileName = ctx.NAME().getText();
+
     Node root = root(fileName);
+
     xPathParser.RpContext rpctx = ctx.rp();
-    return relaTive(rpctx, root);
+    System.out.println("into this function");
+    List<Node> nList = relaTive(rpctx, root);
+    System.out.println("size is " + nList.size());
+    for(Node n : nList) {
+      System.out.println("ret name: " + n.getNodeName() );
+//      System.out.println("ret name: " + n.getNodeName() + " " + "ret txt  " + n.getTextContent());
+    }
+    return nList;
   }
 
   @Override
@@ -255,7 +264,21 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
   }
 
   public Node root(String fileName) {
+
+    File fXmlFile = new File("/Users/gaoyue/Desktop/CSE_232b/" + fileName + ".xml");
+    DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+    try {
+      DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+      Document doc = dBuilder.parse(fXmlFile);
+      doc.getDocumentElement().normalize();
+      System.out.println("Root Element : " + doc.getDocumentElement().getNodeName());
+      Node root = doc.getDocumentElement();
+      return root;
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
     return null;
+
   }
 
   public List<Node> children(Node n) {

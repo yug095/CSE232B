@@ -24,7 +24,8 @@ import org.antlr.v4.runtime.tree.ParseTree;
 public class App {
   public static void main(String[] args) {
         try {
-      ANTLRInputStream input = new ANTLRInputStream("doc(doc)");
+//      ANTLRInputStream input = new ANTLRInputStream("doc(doc)/PERSONAE");
+ANTLRInputStream input = new ANTLRInputStream("doc(doc)/*");
 
       xPathLexer lexer = new xPathLexer(input);
       CommonTokenStream tokens = new CommonTokenStream(lexer);
@@ -32,8 +33,8 @@ public class App {
       xPathParser parser = new xPathParser(tokens);
       parser.removeErrorListeners();
       ParseTree tree = parser.ap();
-      EvalVisitor evalVisitor = new EvalVisitor();
-      evalVisitor.visit(tree);
+      EvalXpath evalpath = new EvalXpath();
+      evalpath.visit(tree);
 
     } catch (Exception e) {
       e.printStackTrace();
