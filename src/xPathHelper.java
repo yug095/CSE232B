@@ -26,13 +26,23 @@ import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
 import org.w3c.dom.Element;
 import java.io.File;
+import java.util.List;
+
 public interface xPathHelper {
-  NodeList absoLute(xPathParser.ApContext ctx);
-  NodeList relaTive(xPathParser.RpContext ctx, Node n);
+
+  List<Node> absoLute(xPathParser.ApContext ctx);
+
+  List<Node> relaTive(xPathParser.RpContext ctx, Node n);
+
   boolean filTer(xPathParser.FilterContext ctx, Node n);
+
   Node root(String fileName);
-  NodeList children(Node n);
-  NodeList parent(Node n);
+
+  List<Node> children(Node n);
+
+  List<Node> parent(Node n);
+
   String tag(Node n);
-  Node txt(Node n);
+
+  List<Node> txt(Node n);
 }

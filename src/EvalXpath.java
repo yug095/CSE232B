@@ -23,24 +23,163 @@ import javax.xml.parsers.DocumentBuilder;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
 import org.w3c.dom.Element;
 import org.w3c.dom.xpath.XPathEvaluator;
 
 import java.io.File;
-public class EvalXpath extends xPathBaseVisitor<NodeList>  implements xPathHelper{
+import java.util.Set;
 
-  private static Node currentNode;
+public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHelper{
+
+  private  Node currentNode;
   @Override
-  public NodeList visitApsl(xPathParser.ApslContext ctx) {
-    return null;
+  public List<Node> visitApsl(xPathParser.ApslContext ctx) {
+    String fileName = ctx.NAME().getText();
+    Node root = root(fileName);
+    xPathParser.RpContext rpctx = ctx.rp();
+    return relaTive(rpctx, root);
   }
 
   @Override
-  public NodeList visitTagName(xPathParser.TagNameContext ctx) {
+  public List<Node> visitApslsl(xPathParser.ApslslContext ctx) {
+    xPathParser.RpContext rp1 = new xPathParser.RpContext();
     return null;
   }
 
-  public NodeList absoLute (xPathParser.ApContext ctx) {
+  public List<Node> visitTagName(xPathParser.TagNameContext ctx, Node n) {
+    List<Node> nList = new ArrayList<>();
+    List<Node> cList = visitStar(n);
+    String tagName = ctx.NAME().getText();
+    for(Node node : cList) {
+      if(node.getNodeName().equals(tagName)) {
+        nList.add(node);
+      }
+    }
+    return nList;
+  }
+
+  public List<Node> visitStar (Node n) {
+    return children(n);
+  }
+
+  public List<Node> visitDot(xPathParser.DotContext ctx, Node n) {
+    List<Node> ret = new ArrayList<>();
+    ret.add(n);
+    return ret;
+  }
+
+  public  List<Node> visitText( Node n) {
+    return txt(n);
+  }
+
+  public  List<Node> visitParent(Node n) {
+    return  parent(n);
+  }
+
+  public  List<Node> visitAttribute(xPathParser.AttributeContext ctx, Node n) {
+    String nodeName = ctx.NAME().getText();
+    List<Node> nList = new ArrayList<>();
+    nList.add(n.getAttributes().getNamedItem(nodeName));
+    return nList;
+  }
+
+  public  List<Node> visitParens(xPathParser.ParensContext ctx, Node n) {
+    xPathParser.RpContext rpctx = ctx.rp();
+    return relaTive(rpctx, n);
+  }
+
+  public  List<Node> visitSingleSlashRp(xPathParser.SingleSlashRpContext ctx, Node n) {
+    xPathParser.RpContext rp1 = ctx.rp(0);
+    xPathParser.RpContext rp2 = ctx.rp(1);
+    Set<Node> set = new HashSet<>();
+    List<Node> nList = relaTive(rp1, n);
+    for(Node node : nList) {
+      set.addAll(relaTive(rp2, node));
+    }
+    return new ArrayList<>(set);
+  }
+
+  public  List<Node> visitDoubleSlashRp(xPathParser.DoubleSlashRpContext ctx, Node n) {
+    return null;
+  }
+
+  public  List<Node> visitFilterRp(xPathParser.FilterRpContext ctx, Node n) {
+    xPathParser.FilterContext fctx = ctx.filter();
+    xPathParser.RpContext rpctx = ctx.rp();
+    List<Node> nList = new ArrayList<>();
+    List<Node> tmpList = relaTive(rpctx, n);
+    for(Node node : tmpList) {
+      if(filTer(fctx, node)) {
+        nList.add(node);
+      }
+    }
+    return nList;
+  }
+
+  public List<Node> visitCommaRp(xPathParser.CommaRpContext ctx, Node n) {
+    Set<Node> set = new HashSet<>();
+    xPathParser.RpContext rp1 = ctx.rp(0);
+    xPathParser.RpContext rp2 = ctx.rp(1);
+    set.addAll(relaTive(rp1, n));
+    set.addAll(relaTive(rp2, n));
+    return new ArrayList<>(set);
+  }
+
+  public boolean visitRpFilter (xPathParser.RpFilterContext ctx, Node n) {
+    xPathParser.RpContext rp = ctx.rp();
+    return !relaTive(rp, n).isEmpty();
+  }
+
+  public boolean visitEq1Filter (xPathParser.Eq1FilterContext ctx, Node n) {
+    return true;
+  }
+
+  public boolean visitEq2Filter (xPathParser.Eq2FilterContext ctx, Node n) {
+      return true;
+  }
+
+  public boolean visitIs1Filter (xPathParser.Is1FilterContext ctx, Node n) {
+    xPathParser.RpContext rp1 = ctx.rp(0);
+    xPathParser.RpContext rp2 = ctx.rp(1);
+    List<Node> l1 = relaTive(rp1, n);
+    List<Node> l2 = relaTive(rp2, n);
+    l1.retainAll(l2);
+    return !l1.isEmpty();
+  }
+
+  public boolean visitIs2Filter (xPathParser.Is2FilterContext ctx, Node n) {
+    xPathParser.RpContext rp1 = ctx.rp(0);
+    xPathParser.RpContext rp2 = ctx.rp(1);
+    List<Node> l1 = relaTive(rp1, n);
+    List<Node> l2 = relaTive(rp2, n);
+    l1.retainAll(l2);
+    return !l1.isEmpty();
+  }
+
+  public boolean visitParensFilter (xPathParser.ParensFilterContext ctx, Node n) {
+    return filTer(ctx.filter(), n);
+  }
+
+
+  public boolean visitAndFilter (xPathParser.AndFilterContext ctx, Node n) {
+    return filTer(ctx.filter().get(0), n) && filTer(ctx.filter().get(1), n);
+  }
+
+  public boolean visitNotFilter (xPathParser.NotFilterContext ctx, Node n) {
+    return !filTer(ctx.filter(), n);
+  }
+
+  public boolean visitOrFilter (xPathParser.OrFilterContext ctx, Node n) {
+    return filTer(ctx.filter().get(0), n) || filTer(ctx.filter().get(1), n);
+  }
+
+
+
+  public List<Node> absoLute (xPathParser.ApContext ctx) {
     if (ctx instanceof xPathParser.ApslContext) {
       return visitApsl((xPathParser.ApslContext) ctx);
     } else {
@@ -48,57 +187,91 @@ public class EvalXpath extends xPathBaseVisitor<NodeList>  implements xPathHelpe
     }
   }
 
-  public NodeList relaTive(xPathParser.RpContext ctx, Node n) {
-    this.currentNode = n;
+  public List<Node> relaTive(xPathParser.RpContext ctx, Node n) {
     if (ctx instanceof xPathParser.TagNameContext) {
-      return visitTagName((xPathParser.TagNameContext)ctx);
+      return visitTagName((xPathParser.TagNameContext)ctx, n);
     }
     if (ctx instanceof xPathParser.StarContext) {
-      return visitStar((xPathParser.StarContext) ctx);
+      return visitStar(n);
     }
     if (ctx instanceof xPathParser.DotContext) {
-      return visitDot((xPathParser.DotContext) ctx);
+      return visitDot((xPathParser.DotContext) ctx, n);
     }
     if (ctx instanceof xPathParser.ParentContext) {
-      return visitParent((xPathParser.ParentContext) ctx);
+      return visitParent(n);
     }
     if (ctx instanceof xPathParser.TextContext) {
-      return visitText((xPathParser.TextContext) ctx);
+      return visitText(n);
     }
     if (ctx instanceof xPathParser.AttributeContext) {
-      return visitAttribute((xPathParser.AttributeContext) ctx);
+      return visitAttribute((xPathParser.AttributeContext) ctx, n);
     }
     if (ctx instanceof xPathParser.ParensContext) {
-      return visitParens((xPathParser.ParensContext) ctx);
+      return visitParens((xPathParser.ParensContext) ctx, n);
     }
     if (ctx instanceof xPathParser.SingleSlashRpContext) {
-      return visitSingleSlashRp((xPathParser.SingleSlashRpContext) ctx);
+      return visitSingleSlashRp((xPathParser.SingleSlashRpContext) ctx, n);
     }
     if (ctx instanceof xPathParser.DoubleSlashRpContext) {
-      return visitDoubleSlashRp((xPathParser.DoubleSlashRpContext) ctx);
+      return visitDoubleSlashRp((xPathParser.DoubleSlashRpContext) ctx, n);
     }
     if (ctx instanceof xPathParser.FilterRpContext) {
-      return visitFilterRp((xPathParser.FilterRpContext) ctx);
+      return visitFilterRp((xPathParser.FilterRpContext) ctx, n);
     }
     if (ctx instanceof xPathParser.CommaRpContext) {
-      return visitCommaRp((xPathParser.CommaRpContext) ctx);
+      return visitCommaRp((xPathParser.CommaRpContext) ctx, n);
     }
     return null;
   }
   public boolean filTer(xPathParser.FilterContext ctx, Node n) {
-    return true;
+    if (ctx instanceof xPathParser.RpFilterContext) {
+      return visitRpFilter((xPathParser.RpFilterContext) ctx, n);
+    }
+    if(ctx instanceof xPathParser.Eq1FilterContext) {
+      return visitEq1Filter((xPathParser.Eq1FilterContext) ctx, n);
+    }
+    if(ctx instanceof xPathParser.Eq2FilterContext) {
+      return visitEq2Filter((xPathParser.Eq2FilterContext) ctx, n);
+    }
+    if(ctx instanceof xPathParser.Is1FilterContext) {
+      return visitIs1Filter((xPathParser.Is1FilterContext) ctx, n);
+    }
+    if(ctx instanceof xPathParser.Is2FilterContext) {
+      return visitIs2Filter((xPathParser.Is2FilterContext) ctx, n);
+    }
+    if(ctx instanceof xPathParser.ParensFilterContext) {
+      return visitParensFilter((xPathParser.ParensFilterContext) ctx, n);
+    }
+    if(ctx instanceof xPathParser.AndFilterContext) {
+      return visitAndFilter((xPathParser.AndFilterContext) ctx, n);
+    }
+    if(ctx instanceof xPathParser.OrFilterContext) {
+      return visitOrFilter((xPathParser.OrFilterContext) ctx, n);
+    }
+    if(ctx instanceof xPathParser.NotFilterContext) {
+      return visitOrFilter((xPathParser.OrFilterContext) ctx, n);
+    }
+    return false;
   }
 
   public Node root(String fileName) {
     return null;
   }
 
-  public NodeList children(Node n) {
-    return null;
+  public List<Node> children(Node n) {
+    NodeList l = n.getChildNodes();
+    int len = l.getLength();
+    List<Node> nList = new ArrayList<>();
+    for(int i = 0; i < len; i++) {
+      nList.add(l.item(i));
+    }
+    return  nList;
   }
 
-  public NodeList parent(Node n) {
-    return null;
+  public List<Node> parent(Node n) {
+    List<Node> nList = new ArrayList<>();
+    nList.add(n.getParentNode());
+    return nList;
   }
 
   public String tag(Node n) {
@@ -107,7 +280,7 @@ public class EvalXpath extends xPathBaseVisitor<NodeList>  implements xPathHelpe
 
 
 
-  public Node txt(Node n) {
+  public List<Node> txt(Node n) {
     return null;
   }
 }
