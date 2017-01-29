@@ -26,6 +26,7 @@ import org.w3c.dom.Node;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import org.w3c.dom.Element;
 import org.w3c.dom.xpath.XPathEvaluator;
@@ -43,20 +44,26 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
     Node root = root(fileName);
 
     xPathParser.RpContext rpctx = ctx.rp();
-    System.out.println("into this function");
     List<Node> nList = relaTive(rpctx, root);
     System.out.println("size is " + nList.size());
     for(Node n : nList) {
-      System.out.println("ret name: " + n.getNodeName() );
-//      System.out.println("ret name: " + n.getNodeName() + " " + "ret txt  " + n.getTextContent());
+//      System.out.println("ret name: " + n.getNodeName() );
+      System.out.println("ret name: " + n.getNodeName() + " " + "ret txt  " + n.getTextContent());
     }
     return nList;
   }
 
   @Override
   public List<Node> visitApslsl(xPathParser.ApslslContext ctx) {
-    xPathParser.RpContext rp1 = new xPathParser.RpContext();
-    return null;
+    xPathParser.RpContext rp =ctx.rp();
+    String fileName = ctx.NAME().getText();
+    List<Node> nList = doubeSlash(new xPathParser.DotContext(new xPathParser.RpContext()), rp, root(fileName));
+    System.out.println("size is " + nList.size());
+    for(Node n : nList) {
+//      System.out.println("ret name: " + n.getNodeName() );
+      System.out.println("ret name: " + n.getNodeName() + " " + "ret txt  " + n.getTextContent());
+    }
+    return nList;
   }
 
   public List<Node> visitTagName(xPathParser.TagNameContext ctx, Node n) {
@@ -101,10 +108,8 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
     return relaTive(rpctx, n);
   }
 
-  public  List<Node> visitSingleSlashRp(xPathParser.SingleSlashRpContext ctx, Node n) {
-    xPathParser.RpContext rp1 = ctx.rp(0);
-    xPathParser.RpContext rp2 = ctx.rp(1);
-    Set<Node> set = new HashSet<>();
+  public  List<Node> singleSlash (xPathParser.RpContext rp1, xPathParser.RpContext rp2, Node n) {
+    Set<Node> set = new LinkedHashSet<>();
     List<Node> nList = relaTive(rp1, n);
     for(Node node : nList) {
       set.addAll(relaTive(rp2, node));
@@ -112,8 +117,24 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
     return new ArrayList<>(set);
   }
 
+  public List<Node>  doubeSlash(xPathParser.RpContext rp1, xPathParser.RpContext rp2, Node n) {
+    Set<Node> set = new LinkedHashSet<>();
+    List<Node> list1 = singleSlash(rp1, rp2, n);
+    set.addAll(list1);
+    List<Node> tmpList = relaTive(rp1, n);
+    for(Node node : tmpList) {
+      set.addAll(doubeSlash(new xPathParser.StarContext(new xPathParser.RpContext()), rp2, node));
+    }
+    return new ArrayList<>(set);
+  }
+  public  List<Node> visitSingleSlashRp(xPathParser.SingleSlashRpContext ctx, Node n) {
+    xPathParser.RpContext rp1 = ctx.rp(0);
+    xPathParser.RpContext rp2 = ctx.rp(1);
+    return singleSlash(rp1, rp2, n);
+  }
+
   public  List<Node> visitDoubleSlashRp(xPathParser.DoubleSlashRpContext ctx, Node n) {
-    return null;
+    return doubeSlash(ctx.rp(0), ctx.rp(1), n);
   }
 
   public  List<Node> visitFilterRp(xPathParser.FilterRpContext ctx, Node n) {
@@ -130,7 +151,7 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
   }
 
   public List<Node> visitCommaRp(xPathParser.CommaRpContext ctx, Node n) {
-    Set<Node> set = new HashSet<>();
+    Set<Node> set = new LinkedHashSet<>();
     xPathParser.RpContext rp1 = ctx.rp(0);
     xPathParser.RpContext rp2 = ctx.rp(1);
     set.addAll(relaTive(rp1, n));
@@ -189,11 +210,13 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
 
 
   public List<Node> absoLute (xPathParser.ApContext ctx) {
+    List<Node> ret;
     if (ctx instanceof xPathParser.ApslContext) {
-      return visitApsl((xPathParser.ApslContext) ctx);
+      ret = visitApsl((xPathParser.ApslContext) ctx);
     } else {
-      return visitApslsl((xPathParser.ApslslContext) ctx);
+      ret = visitApslsl((xPathParser.ApslslContext) ctx);
     }
+    return ret;
   }
 
   public List<Node> relaTive(xPathParser.RpContext ctx, Node n) {
@@ -286,7 +309,10 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
     int len = l.getLength();
     List<Node> nList = new ArrayList<>();
     for(int i = 0; i < len; i++) {
-      nList.add(l.item(i));
+      Node c = l.item(i);
+      if(c.getNodeType() != Node.TEXT_NODE) {
+        nList.add(l.item(i));
+      }
     }
     return  nList;
   }
@@ -304,6 +330,14 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
 
 
   public List<Node> txt(Node n) {
-    return null;
+    NodeList cList = n.getChildNodes();
+    List<Node> nList = new ArrayList<>();
+    for(int i=0;i<cList.getLength();i++) {
+      Node cNode = cList.item(i);
+      if(cNode.getNodeType() == Node.TEXT_NODE) {
+        nList.add(cNode);
+      }
+    }
+    return nList;
   }
 }

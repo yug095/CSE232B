@@ -25,7 +25,7 @@ public class App {
   public static void main(String[] args) {
         try {
 //      ANTLRInputStream input = new ANTLRInputStream("doc(doc)/PERSONAE");
-ANTLRInputStream input = new ANTLRInputStream("doc(doc)/*");
+ANTLRInputStream input = new ANTLRInputStream("doc(doc)//TITLE");
 
       xPathLexer lexer = new xPathLexer(input);
       CommonTokenStream tokens = new CommonTokenStream(lexer);
