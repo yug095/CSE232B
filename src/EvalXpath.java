@@ -34,20 +34,17 @@ import org.w3c.dom.xpath.XPathEvaluator;
 import java.io.File;
 import java.util.Set;
 
-public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHelper{
+public class EvalXpath extends xPathBaseVisitor<List<Node>> implements xPathHelper{
 
-  private  Node currentNode;
   @Override
   public List<Node> visitApsl(xPathParser.ApslContext ctx) {
-    String fileName = ctx.NAME().getText();
-
+    String fileName = ctx.NAME(0).getText() + '.' + ctx.NAME(1).getText();
     Node root = root(fileName);
-
     xPathParser.RpContext rpctx = ctx.rp();
     List<Node> nList = relaTive(rpctx, root);
     System.out.println("size is " + nList.size());
     for(Node n : nList) {
-//      System.out.println("ret name: " + n.getNodeName() );
+      System.out.println("ret name: " + n.getNodeName() );
       System.out.println("ret name: " + n.getNodeName() + " " + "ret txt  " + n.getTextContent());
     }
     return nList;
@@ -56,11 +53,11 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
   @Override
   public List<Node> visitApslsl(xPathParser.ApslslContext ctx) {
     xPathParser.RpContext rp =ctx.rp();
-    String fileName = ctx.NAME().getText();
+    String fileName = ctx.NAME(0).getText() + '.' + ctx.NAME(1).getText();
     List<Node> nList = doubeSlash(new xPathParser.DotContext(new xPathParser.RpContext()), rp, root(fileName));
     System.out.println("size is " + nList.size());
     for(Node n : nList) {
-//      System.out.println("ret name: " + n.getNodeName() );
+      System.out.println("ret name: " + n.getNodeName() );
       System.out.println("ret name: " + n.getNodeName() + " " + "ret txt  " + n.getTextContent());
     }
     return nList;
@@ -287,8 +284,7 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
   }
 
   public Node root(String fileName) {
-
-    File fXmlFile = new File("/Users/gaoyue/Desktop/CSE_232b/" + fileName + ".xml");
+    File fXmlFile = new File("/Users/caleb/Desktop/" + fileName);
     DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
     try {
       DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -297,7 +293,8 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
       System.out.println("Root Element : " + doc.getDocumentElement().getNodeName());
       Node root = doc.getDocumentElement();
       return root;
-    } catch (Exception e) {
+    }
+    catch (Exception e) {
       e.printStackTrace();
     }
     return null;
@@ -326,8 +323,6 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
   public String tag(Node n) {
     return n.getNodeName();
   }
-
-
 
   public List<Node> txt(Node n) {
     NodeList cList = n.getChildNodes();

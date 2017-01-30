@@ -3,8 +3,70 @@
   <component name="ChangeListManager">
     <list default="true" id="84efe265-160e-487f-87f4-4d47825dd9b6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/App.class" afterPath="$PROJECT_DIR$/out/production/milestone/App.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/EvalXpath.class" afterPath="$PROJECT_DIR$/out/production/milestone/EvalXpath.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathLexer.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathLexer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$AndFilterContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$AndFilterContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$ApslContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$ApslContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$ApslslContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$ApslslContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$AttributeContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$AttributeContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$CommaRpContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$CommaRpContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$DotContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$DotContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$DoubleSlashRpContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$DoubleSlashRpContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$Eq1FilterContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$Eq1FilterContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$Eq2FilterContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$Eq2FilterContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$FilterContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$FilterContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$FilterRpContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$FilterRpContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$Is1FilterContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$Is1FilterContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$Is2FilterContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$Is2FilterContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$NotFilterContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$NotFilterContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$OrFilterContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$OrFilterContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$ParensContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$ParensContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$ParensFilterContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$ParensFilterContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$ParentContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$ParentContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$RpContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$RpContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$RpFilterContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$RpFilterContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$SingleSlashRpContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$SingleSlashRpContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$StarContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$StarContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$TagNameContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$TagNameContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$TextContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$TextContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathLexer.class" afterPath="$PROJECT_DIR$/src/xPathLexer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$AndFilterContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$AndFilterContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$ApslContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$ApslContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$ApslslContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$ApslslContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$AttributeContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$AttributeContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$CommaRpContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$CommaRpContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$DotContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$DotContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$DoubleSlashRpContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$DoubleSlashRpContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$Eq1FilterContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$Eq1FilterContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$Eq2FilterContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$Eq2FilterContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$FilterContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$FilterContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$FilterRpContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$FilterRpContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$Is1FilterContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$Is1FilterContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$Is2FilterContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$Is2FilterContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$NotFilterContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$NotFilterContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$OrFilterContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$OrFilterContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$ParensContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$ParensContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$ParensFilterContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$ParensFilterContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$ParentContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$ParentContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$RpContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$RpContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$RpFilterContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$RpFilterContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$SingleSlashRpContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$SingleSlashRpContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$StarContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$StarContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$TagNameContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$TagNameContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$TextContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$TextContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser.class" afterPath="$PROJECT_DIR$/src/xPathParser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/milestone.iml" afterPath="$PROJECT_DIR$/milestone.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPath.g4" afterPath="$PROJECT_DIR$/out/production/milestone/xPath.g4" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPath.tokens" afterPath="$PROJECT_DIR$/out/production/milestone/xPath.tokens" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathLexer.tokens" afterPath="$PROJECT_DIR$/out/production/milestone/xPathLexer.tokens" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.java" afterPath="$PROJECT_DIR$/src/App.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/EvalXpath.java" afterPath="$PROJECT_DIR$/src/EvalXpath.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPath.g4" afterPath="$PROJECT_DIR$/src/xPath.g4" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathLexer.java" afterPath="$PROJECT_DIR$/src/xPathLexer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser.java" afterPath="$PROJECT_DIR$/src/xPathParser.java" />
     </list>
     <ignored path="milestone.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -16,7 +78,6 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/milestone$App.coverage" NAME="App Coverage Results" MODIFIED="1485629352983" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
@@ -32,8 +93,8 @@
       <file leaf-file-name="xPath.g4" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/xPath.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+            <state relative-caret-position="450">
+              <caret line="30" column="28" lean-forward="false" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -42,27 +103,13 @@
       <file leaf-file-name="EvalXpath.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/EvalXpath.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="64" column="5" selection-start-line="63" selection-start-column="79" selection-end-line="64" selection-end-column="5" />
+            <state relative-caret-position="340">
+              <caret line="59" column="14" lean-forward="true" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
               <folding>
-                <element signature="e#0#10868#0" expanded="true" />
+                <element signature="e#0#10875#0" expanded="true" />
                 <element signature="imports" expanded="true" />
-                <element signature="e#2573#2574#0" expanded="true" />
-                <element signature="e#2601#2602#0" expanded="true" />
-                <element signature="e#2788#2789#0" expanded="true" />
-                <element signature="e#2811#2812#0" expanded="true" />
-                <element signature="e#2855#2856#0" expanded="true" />
-                <element signature="e#2882#2883#0" expanded="true" />
-                <element signature="e#5292#5293#0" expanded="true" />
-                <element signature="e#5313#5314#0" expanded="true" />
-                <element signature="e#5391#5392#0" expanded="true" />
-                <element signature="e#5414#5415#0" expanded="true" />
-                <element signature="e#6082#6083#0" expanded="true" />
-                <element signature="e#6122#6123#0" expanded="true" />
-                <element signature="e#6360#6361#0" expanded="true" />
-                <element signature="e#6401#6402#0" expanded="true" />
-                <element signature="e#10524#10525#0" expanded="true" />
-                <element signature="e#10556#10557#0" expanded="true" />
+                <element signature="e#10534#10535#0" expanded="true" />
+                <element signature="e#10566#10567#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -71,12 +118,9 @@
       <file leaf-file-name="xPathParser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/xPathParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="121" column="37" selection-start-line="121" selection-start-column="28" selection-end-line="121" selection-end-column="37" />
-              <folding>
-                <element signature="e#6854#6855#0" expanded="true" />
-                <element signature="e#6902#6903#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="181">
+              <caret line="99" column="38" lean-forward="false" selection-start-line="99" selection-start-column="37" selection-end-line="99" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -84,8 +128,8 @@
       <file leaf-file-name="xPathHelper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/xPathHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="46" column="12" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
+            <state relative-caret-position="474">
+              <caret line="46" column="12" lean-forward="false" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
               <folding>
                 <element signature="e#0#1232#0" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -97,51 +141,8 @@
       <file leaf-file-name="App.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbstractParseTreeVisitor.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/../Tool/antlr-4.5.3-complete.jar!/org/antlr/v4/runtime/tree/AbstractParseTreeVisitor.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-              <folding>
-                <element signature="e#531#532#0" expanded="true" />
-                <element signature="e#565#566#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ParseTree.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/../Tool/antlr-4.5.3-complete.jar!/org/antlr/v4/runtime/tree/ParseTree.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ParseTreeVisitor.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/../Tool/antlr-4.5.3-complete.jar!/org/antlr/v4/runtime/tree/ParseTreeVisitor.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="xPathBaseVisitor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/xPathBaseVisitor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="53" column="30" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="30" />
+            <state relative-caret-position="105">
+              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -157,6 +158,13 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>filename</find>
+      <find>size</find>
+      <find>visitIs</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -170,12 +178,12 @@
       <list>
         <option value="$PROJECT_DIR$/src/xPathBaseListener.java" />
         <option value="$PROJECT_DIR$/src/EvalVisitor.java" />
-        <option value="$PROJECT_DIR$/src/xPath.g4" />
         <option value="$PROJECT_DIR$/src/xPathBaseVisitor.java" />
         <option value="$PROJECT_DIR$/src/xPathParser.java" />
         <option value="$PROJECT_DIR$/src/xPathHelper.java" />
-        <option value="$PROJECT_DIR$/src/EvalXpath.java" />
+        <option value="$PROJECT_DIR$/src/xPath.g4" />
         <option value="$PROJECT_DIR$/src/App.java" />
+        <option value="$PROJECT_DIR$/src/EvalXpath.java" />
       </list>
     </option>
   </component>
@@ -187,18 +195,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1280" />
-    <option name="height" value="800" />
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
-    <OptionsSetting value="true" id="Add" />
-    <OptionsSetting value="true" id="Remove" />
-    <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
-    <OptionsSetting value="true" id="Status" />
-    <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
-    <ConfirmationsSetting value="0" id="Remove" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -215,32 +213,36 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="milestone" />
+              <option name="myItemId" value="CSE232B" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="milestone" />
+              <option name="myItemId" value="CSE232B" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="milestone" />
+              <option name="myItemId" value="CSE232B" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="milestone" />
+              <option name="myItemId" value="CSE232B" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="milestone" />
+              <option name="myItemId" value="CSE232B" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -250,7 +252,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -258,7 +260,7 @@
     <property name="settings.editor.selected.configurable" value="copyright" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="FullScreen" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tutorial_code/CSE232BAntrlTutorial/ANTLRTutorial/pom.xml" />
+    <property name="last_opened_file_path" value="$USER_HOME$/tutorial_code/CSE232BAntrlTutorial/ANTLRTutorial/pom.xml" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -283,9 +285,10 @@
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
       <method />
     </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
@@ -295,11 +298,20 @@
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
       <option name="PREFERRED_AVD" value="" />
       <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
       <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
+        <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <method />
@@ -318,8 +330,17 @@
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
       <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
+        <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -373,27 +394,6 @@
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="JUnitTestDiscovery" factoryName="JUnit Test Discovery" changeList="All">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
@@ -485,34 +485,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="TestNGTestDiscovery" factoryName="TestNG Test Discovery" changeList="All">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
     <list size="1">
       <item index="0" class="java.lang.String" itemvalue="Application.App" />
     </list>
@@ -521,6 +493,25 @@
         <item index="0" class="java.lang.String" itemvalue="Application.App" />
       </list>
     </recent_temporary>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method />
+    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -539,20 +530,22 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282532" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24267292" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2430279" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -561,13 +554,15 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997344" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -576,7 +571,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="16" />
+      <option name="time" value="18" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -587,24 +582,73 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/xPath.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="180">
+          <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/xPath.tokens">
+    <entry file="file://$PROJECT_DIR$/src/EvalXpath.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state relative-caret-position="480">
+          <caret line="64" column="5" lean-forward="false" selection-start-line="63" selection-start-column="79" selection-end-line="64" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#10875#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#10534#10535#0" expanded="true" />
+            <element signature="e#10566#10567#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xPathParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1530">
+          <caret line="121" column="9" lean-forward="true" selection-start-line="121" selection-start-column="9" selection-end-line="121" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xPathHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="46" column="12" lean-forward="false" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#1232#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/xPathBaseVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="53" column="30" lean-forward="false" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xPath.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xPath.tokens" />
+    <entry file="file://$PROJECT_DIR$/src/xPathBaseVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+          <caret line="18" column="21" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -612,23 +656,16 @@
     <entry file="file://$PROJECT_DIR$/src/xPathParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1560">
-          <caret line="123" column="5" selection-start-line="123" selection-start-column="5" selection-end-line="123" selection-end-column="5" />
+          <caret line="123" column="5" lean-forward="false" selection-start-line="123" selection-start-column="5" selection-end-line="123" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EvalVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="48" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EvalVisitor.java" />
     <entry file="file://$PROJECT_DIR$/src/xPathBaseListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4080">
-          <caret line="274" column="5" selection-start-line="274" selection-start-column="5" selection-end-line="274" selection-end-column="5" />
+          <caret line="274" column="5" lean-forward="false" selection-start-line="274" selection-start-column="5" selection-end-line="274" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -636,7 +673,7 @@
     <entry file="file://$PROJECT_DIR$/src/xPathListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -644,7 +681,7 @@
     <entry file="file://$PROJECT_DIR$/src/xPathVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+          <caret line="10" column="48" lean-forward="false" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -652,7 +689,7 @@
     <entry file="file://$PROJECT_DIR$/src/xPathHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
             <element signature="e#0#1232#0" expanded="true" />
             <element signature="imports" expanded="true" />
@@ -663,7 +700,7 @@
     <entry file="file://$PROJECT_DIR$/src/xPathLexer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -671,57 +708,34 @@
     <entry file="file://$PROJECT_DIR$/src/xPath.g4">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/xPath.tokens">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xPath.tokens" />
     <entry file="file://$PROJECT_DIR$/src/xPathBaseVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EvalVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="41" column="19" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EvalVisitor.java" />
     <entry file="file://$PROJECT_DIR$/src/App.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#1435#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-          </folding>
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/src.zip!/javax/xml/parsers/DocumentBuilderFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2295">
-          <caret line="176" column="36" selection-start-line="176" selection-start-column="36" selection-end-line="176" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/src.zip!/javax/xml/parsers/DocumentBuilderFactory.java" />
     <entry file="file://$PROJECT_DIR$/src/xPathBaseListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -729,56 +743,28 @@
     <entry file="file://$PROJECT_DIR$/src/xPathListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="1" column="10" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="10" />
+          <caret line="1" column="10" lean-forward="false" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/xPathLexer.tokens">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xPathLexer.tokens" />
     <entry file="file://$PROJECT_DIR$/src/xPathLexer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/src.zip!/javax/xml/parsers/DocumentBuilderFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2295">
-          <caret line="176" column="36" selection-start-line="176" selection-start-column="36" selection-end-line="176" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/src.zip!/javax/xml/parsers/DocumentBuilderFactory.java" />
     <entry file="file://$PROJECT_DIR$/src/xPathParser.class" />
     <entry file="file://$PROJECT_DIR$/src/App.class" />
-    <entry file="file://$PROJECT_DIR$/src/xPathLexer.tokens">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xPathLexer.tokens" />
     <entry file="file://$PROJECT_DIR$/src/xPathLexer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xPath.tokens">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -786,7 +772,7 @@
     <entry file="file://$PROJECT_DIR$/src/xPathListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -794,7 +780,7 @@
     <entry file="file://$PROJECT_DIR$/src/xPathBaseListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4080">
-          <caret line="274" column="5" selection-start-line="274" selection-start-column="5" selection-end-line="274" selection-end-column="5" />
+          <caret line="274" column="5" lean-forward="false" selection-start-line="274" selection-start-column="5" selection-end-line="274" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -802,7 +788,7 @@
     <entry file="file://$PROJECT_DIR$/src/xPathVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+          <caret line="10" column="48" lean-forward="false" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -810,74 +796,52 @@
     <entry file="file://$PROJECT_DIR$/src/xPathHelper.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/src.zip!/org/w3c/dom/NodeList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="51" column="17" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../Tool/antlr-4.5.3-complete.jar!/org/antlr/v4/runtime/ParserRuleContext.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../Tool/antlr-4.5.3-complete.jar!/org/antlr/v4/runtime/tree/AbstractParseTreeVisitor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-          <folding>
-            <element signature="e#531#532#0" expanded="true" />
-            <element signature="e#565#566#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../Tool/antlr-4.5.3-complete.jar!/org/antlr/v4/runtime/tree/ParseTree.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/src.zip!/org/w3c/dom/NodeList.java" />
+    <entry file="jar://$USER_HOME$/Tool/antlr-4.5.3-complete.jar!/org/antlr/v4/runtime/ParserRuleContext.class" />
+    <entry file="jar://$USER_HOME$/Tool/antlr-4.5.3-complete.jar!/org/antlr/v4/runtime/tree/AbstractParseTreeVisitor.class" />
+    <entry file="jar://$USER_HOME$/Tool/antlr-4.5.3-complete.jar!/org/antlr/v4/runtime/tree/ParseTree.class" />
+    <entry file="file://$PROJECT_DIR$/src/EvalVisitor.java" />
+    <entry file="jar://$USER_HOME$/Tool/antlr-4.5.3-complete.jar!/org/antlr/v4/runtime/tree/ParseTreeVisitor.class" />
     <entry file="file://$PROJECT_DIR$/src/xPathBaseVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="53" column="30" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="30" />
+        <state relative-caret-position="120">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EvalVisitor.java">
+    <entry file="file://$PROJECT_DIR$/src/xPath.tokens">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+        <state relative-caret-position="-102">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../Tool/antlr-4.5.3-complete.jar!/org/antlr/v4/runtime/tree/ParseTreeVisitor.class">
+    <entry file="file://$PROJECT_DIR$/src/xPathParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="181">
+          <caret line="99" column="38" lean-forward="false" selection-start-line="99" selection-start-column="37" selection-end-line="99" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xPath.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="28" lean-forward="false" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/xPathHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="46" column="12" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
+        <state relative-caret-position="474">
+          <caret line="46" column="12" lean-forward="false" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
           <folding>
             <element signature="e#0#1232#0" expanded="true" />
             <element signature="imports" expanded="true" />
@@ -885,56 +849,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/xPathParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="121" column="37" selection-start-line="121" selection-start-column="28" selection-end-line="121" selection-end-column="37" />
-          <folding>
-            <element signature="e#6854#6855#0" expanded="true" />
-            <element signature="e#6902#6903#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/EvalXpath.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="64" column="5" selection-start-line="63" selection-start-column="79" selection-end-line="64" selection-end-column="5" />
+        <state relative-caret-position="340">
+          <caret line="59" column="14" lean-forward="true" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
           <folding>
-            <element signature="e#0#10868#0" expanded="true" />
+            <element signature="e#0#10875#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#2573#2574#0" expanded="true" />
-            <element signature="e#2601#2602#0" expanded="true" />
-            <element signature="e#2788#2789#0" expanded="true" />
-            <element signature="e#2811#2812#0" expanded="true" />
-            <element signature="e#2855#2856#0" expanded="true" />
-            <element signature="e#2882#2883#0" expanded="true" />
-            <element signature="e#5292#5293#0" expanded="true" />
-            <element signature="e#5313#5314#0" expanded="true" />
-            <element signature="e#5391#5392#0" expanded="true" />
-            <element signature="e#5414#5415#0" expanded="true" />
-            <element signature="e#6082#6083#0" expanded="true" />
-            <element signature="e#6122#6123#0" expanded="true" />
-            <element signature="e#6360#6361#0" expanded="true" />
-            <element signature="e#6401#6402#0" expanded="true" />
-            <element signature="e#10524#10525#0" expanded="true" />
-            <element signature="e#10556#10557#0" expanded="true" />
+            <element signature="e#10534#10535#0" expanded="true" />
+            <element signature="e#10566#10567#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xPath.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+        <state relative-caret-position="105">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>
