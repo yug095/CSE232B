@@ -1,7 +1,7 @@
 grammar xPath;
 
-ap  :   'doc(' NAME ')/' rp NEWLINE       # apsl
-    |   'doc(' NAME ')//' rp NEWLINE      # apslsl
+ap  :   'doc''(' NAME ')' '/' rp          # apsl
+    |   'doc' '(' NAME ')' '/' rp         # apslsl
     ;
 
 rp  :    NAME                             # tagName
@@ -31,7 +31,6 @@ filter:  rp                               # rpFilter
 
 
 NAME     : [a-zA-Z]+ ;
-NEWLINE  :'\r'? '\n' ;
 STAR     : '*'       ;
 DOT      : '.'       ;
 PARENT   : '..'      ;
@@ -40,3 +39,5 @@ AT       : '@'       ;
 AND      : 'and'     ;
 OR       : 'or'      ;
 NOT      : 'not'     ;
+WS : [ \t\r\n]+ -> skip;
+
