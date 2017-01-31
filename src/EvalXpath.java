@@ -31,36 +31,54 @@ import java.util.List;
 import org.w3c.dom.Element;
 import org.w3c.dom.xpath.XPathEvaluator;
 
-import java.io.File;
+import java.io.*;
 import java.util.Set;
 
 public class EvalXpath extends xPathBaseVisitor<List<Node>> implements xPathHelper{
 
   @Override
   public List<Node> visitApsl(xPathParser.ApslContext ctx) {
-    String fileName = ctx.NAME(0).getText() + '.' + ctx.NAME(1).getText();
-    Node root = root(fileName);
-    xPathParser.RpContext rpctx = ctx.rp();
-    List<Node> nList = relaTive(rpctx, root);
-    System.out.println("size is " + nList.size());
-    for(Node n : nList) {
-      System.out.println("ret name: " + n.getNodeName() );
-      System.out.println("ret name: " + n.getNodeName() + " " + "ret txt  " + n.getTextContent());
+    try {
+      PrintWriter writer = new PrintWriter("/Users/caleb/Desktop/Output.xml", "UTF-8");
+      String fileName = ctx.NAME(0).getText() + '.' + ctx.NAME(1).getText();
+      Node root = root(fileName);
+      xPathParser.RpContext rpctx = ctx.rp();
+      List<Node> nList = relaTive(rpctx, root);
+      System.out.println("size is " + nList.size());
+
+      for (Node n : nList) {
+        System.out.println('<' + n.getNodeName() + '>' + n.getTextContent() + "</" + n.getNodeName() + '>');
+        writer.println('<' + n.getNodeName() + '>' + n.getTextContent() + "</" + n.getNodeName() + '>');
+      }
+
+      writer.close();
+      return nList;
+    } catch(IOException e) {
+      e.printStackTrace();
     }
-    return nList;
+    return null;
   }
 
   @Override
   public List<Node> visitApslsl(xPathParser.ApslslContext ctx) {
-    xPathParser.RpContext rp =ctx.rp();
-    String fileName = ctx.NAME(0).getText() + '.' + ctx.NAME(1).getText();
-    List<Node> nList = doubeSlash(new xPathParser.DotContext(new xPathParser.RpContext()), rp, root(fileName));
-    System.out.println("size is " + nList.size());
-    for(Node n : nList) {
-      System.out.println("ret name: " + n.getNodeName() );
-      System.out.println("ret name: " + n.getNodeName() + " " + "ret txt  " + n.getTextContent());
+    try {
+      PrintWriter writer = new PrintWriter("/Users/caleb/Desktop/Output.xml", "UTF-8");
+      xPathParser.RpContext rp = ctx.rp();
+      String fileName = ctx.NAME(0).getText() + '.' + ctx.NAME(1).getText();
+      List<Node> nList = doubeSlash(new xPathParser.DotContext(new xPathParser.RpContext()), rp, root(fileName));
+      System.out.println("size is " + nList.size());
+
+      for (Node n : nList) {
+        System.out.println('<' + n.getNodeName() + '>' + n.getTextContent() + "</" + n.getNodeName() + '>');
+        writer.println('<' + n.getNodeName() + '>' + n.getTextContent() + "</" + n.getNodeName() + '>');
+      }
+
+      writer.close();
+      return nList;
+    } catch (IOException e) {
+      e.printStackTrace();
     }
-    return nList;
+    return null;
   }
 
   public List<Node> visitTagName(xPathParser.TagNameContext ctx, Node n) {

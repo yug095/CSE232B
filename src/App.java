@@ -24,7 +24,7 @@ import org.antlr.v4.runtime.tree.ParseTree;
 public class App {
   public static void main(String[] args) {
     try {
-      String test = "doc(\"j_caesar.xml\")//ACT[./TITLE]/*/SPEECH/../*/.././TITLE";
+      String test = "doc(\"j_caesar.xml\")//ACT[not(./TITLE)==(./TITLE)]/*/SPEECH/../TITLE";
       ANTLRInputStream input = new ANTLRInputStream(test);
       xPathLexer lexer = new xPathLexer(input);
       CommonTokenStream tokens = new CommonTokenStream(lexer);
@@ -33,8 +33,7 @@ public class App {
       ParseTree tree = parser.ap();
       EvalXpath evalpath = new EvalXpath();
       evalpath.visit(tree);
-    }
-    catch (Exception e) {
+    } catch (Exception e) {
       e.printStackTrace();
       System.err.println("Error: " + e.getMessage());
     }
