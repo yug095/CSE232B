@@ -11,7 +11,12 @@ import java.util.*;
 public class App {
   public static void main(String[] args) {
         try {
-          ANTLRInputStream input = new ANTLRInputStream("<final> {doc(haha)/(PERSONAE,ACT)/TITLE} </final>");
+          ANTLRInputStream input = new ANTLRInputStream("<result>{\n" +
+                                                          "for $a in doc(haha)//PERSONAE, $b in $a/PERSONA \n" +
+                                                          "  where not (($b/text() = \"JULIUS CAESAR\") or ($b/text() = \"Another Poet\") )\n" +
+                                                          "   return $b\n" +
+                                                          "}\n" +
+                                                          "</result>");
           xPathLexer lexer = new xPathLexer(input);
           CommonTokenStream tokens = new CommonTokenStream(lexer);
           xPathParser parser = new xPathParser(tokens);

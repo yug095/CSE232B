@@ -357,17 +357,15 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
 
   public List<Node> makeText(String s) {
     //takes as  a String constant s and return an XML TEXT NODE WITH VALUE S
+    createDoc();
     List<Node> ret = new ArrayList<>();
     ret.add(resDoc.createTextNode(s));
     return ret;
   }
 
-  Map<String, List<Node>>  assign(String var, List<Node> v, Map<String, List<Node>> c) {
-    //assign a value to a var, copy the c, add , return a new c
-    Map<String, List<Node>> map = new HashMap<>(c);
-    //那原来的怎么处理???
-    c.put(var, v);
-    return map;
+  Map<String, List<Node>>  assign(String var, List<Node> v) {
+    context.put(var, v);
+    return context;
   }
 
   List<Node> getValue(String var) {
@@ -380,7 +378,7 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
   }
   
   public List<Node> visitScXQ(xPathParser.ScXQContext ctx) {
-    String sc = ctx.StringConstant().getText();
+    String sc = ctx.StringConstant().getText().substring(1, ctx.StringConstant().getText().length()-1);
     return makeText(sc);
   }
 
@@ -440,7 +438,10 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
   public List<Node> visitSingleSlashXQ(xPathParser.SingleSlashXQContext ctx) {
     xPathParser.XqContext xq = ctx.xq();
     xPathParser.RpContext rp = ctx.rp();
+    if(xq instanceof xPathParser.VarXQContext) {
+    }
     List<Node> list = visitXQ(xq);
+
     Set<Node> set = new LinkedHashSet<>();
     for(Node node : list) {
       set.addAll(relaTive(rp, node));
@@ -461,8 +462,6 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
 
   public List<Node> visitTagNameXQ(xPathParser.TagNameXQContext ctx) {
     List<Node> l = visitXQ(ctx.xq());
-    if(l == null) System.out.println("Oh, null list!");
-    else System.out.println("size is " + l.size());
     return makeElement(ctx.NAME().get(0).getText(), l);
   }
 
@@ -473,7 +472,7 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
     List<xPathParser.XqContext> xqList = let.xq();
     for(int i=0;i<varList.size();i++) {
       List<Node> value = visitXQ(xqList.get(i));
-      context = assign(varList.get(i).NAME().getText(), value, context);
+      context = assign(varList.get(i).NAME().getText(), value);
     }
     return visitXQ(finalxq);
   }
@@ -481,10 +480,10 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
   public List<Node> visitFlwrXQ(xPathParser.FlwrXQContext ctx) {
     List<xPathParser.VarContext> varList = ctx.forClause().var();
     List<xPathParser.XqContext> xqList = ctx.forClause().xq();
-    List<xPathParser.VarContext> letvarList = ctx.letClause().var();
-    List<xPathParser.XqContext> letxqList = ctx.letClause().xq();
+    List<xPathParser.VarContext> letvarList = ctx.letClause()==null? new ArrayList<>() : ctx.letClause().var();
+    List<xPathParser.XqContext> letxqList = ctx.letClause()==null? new ArrayList<>() : ctx.letClause().xq();
     xPathParser.XqContext finalXq = ctx.returnClause().xq();
-    xPathParser.CondContext condctx = ctx.whereClause().cond();
+    xPathParser.CondContext condctx = ctx.whereClause() == null? null : ctx.whereClause().cond();
     List<Node> ret = new ArrayList<>();
     flwrHelper(varList, xqList, 0, letvarList, letxqList, finalXq, condctx, ret);
     return ret;
@@ -495,18 +494,19 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
     if(i == varList.size()) {
       for(int j=0; j<letvarList.size();j++) {
         List<Node> value = visitXQ(letxqList.get(i));
-        context = assign(letvarList.get(i).NAME().getText(), value, context );
+        context = assign(letvarList.get(i).NAME().getText(), value);
       }
-      if(visitCond(condctx)) {
+      if(condctx == null || visitCond(condctx)) {
         ret.addAll(visitXQ(finalXq));
       }
-    }
-    List<Node> nodeList = visitXQ(xqList.get(i));
-    for(Node node : nodeList) {
-      List<Node> l = new ArrayList<>();
-      l.add(node);
-      context = assign(varList.get(i).NAME().getText(), l, context);
-      flwrHelper(varList, xqList, i+1, letvarList, letxqList, finalXq, condctx, ret);
+    } else {
+      List<Node> nodeList = visitXQ(xqList.get(i));
+      for (Node node : nodeList) {
+        List<Node> l = new ArrayList<>();
+        l.add(node);
+        context = assign(varList.get(i).NAME().getText(), l);
+        flwrHelper(varList, xqList, i + 1, letvarList, letxqList, finalXq, condctx, ret);
+      }
     }
   }
 
@@ -618,7 +618,7 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
     for(Node node : nodeList) {
       List<Node> l = new ArrayList<>();
       l.add(node);
-      context = assign(varList.get(i).NAME().getText(), l, context);
+      context = assign(varList.get(i).NAME().getText(), l);
       getCond(varList, xqList, i+1, ret, cond);
     }
   }
