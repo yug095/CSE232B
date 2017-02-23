@@ -22,6 +22,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
 
 import com.sun.org.apache.xalan.internal.xsltc.compiler.XPathParser;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import com.sun.webkit.dom.NodeImpl;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
@@ -380,16 +381,13 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
     return map;
   }
 
-  List<Node> getValue(Map<String, List<Node>> c, String var) {
-    // TODO: 17/2/21  
-    //get the value of var from the context
-    return null;
+  List<Node> getValue(String var) {
+    return context.get(var);
   }
   
   public List<Node> visitVarXQ(xPathParser.VarXQContext ctx) {
-    //怎么保证传入了正确的context? 用全局变量?
     String s = ctx.var().NAME().getText();
-    return getValue(context, s);
+    return getValue(s);
   }
   
   public List<Node> visitScXQ(xPathParser.ScXQContext ctx) {
@@ -478,11 +476,19 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
   }
 
   public List<Node> visitLetXQ(xPathParser.LetXQContext ctx) {
-    // TODO: 17/2/21
-    return null;
+    xPathParser.XqContext finalxq = ctx.xq();
+    xPathParser.LetClauseContext let = ctx.letClause();
+    List<xPathParser.VarContext> varList = let.var();
+    List<xPathParser.XqContext> xqList = let.xq();
+    for(int i=0;i<varList.size();i++) {
+      List<Node> value = visitXQ(xqList.get(i));
+      context = assign(varList.get(i).NAME().getText(), value, context);
+    }
+    return visitXQ(finalxq);
   }
 
   public List<Node> visitFlwrXQ(xPathParser.FlwrXQContext ctx) {
+
     // TODO: 17/2/21
     return null;
   }
@@ -557,8 +563,29 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
   }
 
   public boolean myVisitSomeSatisCond(xPathParser.SomeSatisCondContext ctx) {
-    // TODO: 17/2/22
-    return true;
+    List<Boolean> ret = new ArrayList<>();
+    boolean r = false;
+    ret.add(r);
+    List<xPathParser.VarContext> varList = ctx.var();
+    List<xPathParser.XqContext> xqList = ctx.xq();
+    xPathParser.CondContext cond = ctx.cond();
+    getCond(varList, xqList, 0, ret, cond);
+    return ret.get(0);
+  }
+
+  public void getCond(List<xPathParser.VarContext> varList, List<xPathParser.XqContext> xqList, int i, List<Boolean> ret, xPathParser.CondContext cond) {
+    if(i == varList.size()) {
+      boolean r = true;
+      ret.clear();
+      ret.add(r);
+    }
+    List<Node> nodeList = visitXQ(xqList.get(i));
+    for(Node node : nodeList) {
+      List<Node> l = new ArrayList<>();
+      l.add(node);
+      context = assign(varList.get(i).NAME().getText(), l, context);
+      getCond(varList, xqList, i+1, ret, cond);
+    }
   }
 
   public boolean myVisitParensCond(xPathParser.ParensCondContext ctx) {
