@@ -42,11 +42,6 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
 
     xPathParser.RpContext rpctx = ctx.rp();
     List<Node> nList = relaTive(rpctx, root);
-    System.out.println("size is " + nList.size());
-    for(Node n : nList) {
-//      System.out.println("ret name: " + n.getNodeName() );
-      System.out.println("ret name: " + n.getNodeName() + " " + "ret txt  " + n.getTextContent());
-    }
     return nList;
   }
 
@@ -55,15 +50,10 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
     xPathParser.RpContext rp =ctx.rp();
     String fileName = ctx.NAME().getText();
     List<Node> nList = doubeSlash(new xPathParser.DotContext(new xPathParser.RpContext()), rp, root(fileName));
-    System.out.println("size is " + nList.size());
-    for(Node n : nList) {
-//      System.out.println("ret name: " + n.getNodeName() );
-      System.out.println("ret name: " + n.getNodeName() + " " + "ret txt  " + n.getTextContent());
-    }
     return nList;
   }
 
-  public List<Node> vistitAp(xPathParser.ApContext ctx) {
+  public List<Node> visit(xPathParser.ApContext ctx) {
     if(ctx instanceof xPathParser.ApslContext) {
       return visitApsl((xPathParser.ApslContext) ctx);
     }
@@ -290,7 +280,6 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
       DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
       Document doc = dBuilder.parse(fXmlFile);
       doc.getDocumentElement().normalize();
-      System.out.println("Root Element : " + doc.getDocumentElement().getNodeName());
       Node root = doc.getDocumentElement();
       return root;
     } catch (Exception e) {
