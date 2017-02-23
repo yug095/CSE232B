@@ -11,19 +11,19 @@ import java.util.*;
 public class App {
   public static void main(String[] args) {
         try {
-          ANTLRInputStream input = new ANTLRInputStream("doc(haha)/(PERSONAE,ACT)/TITLE");
+          ANTLRInputStream input = new ANTLRInputStream("<final> {doc(haha)/(PERSONAE,ACT)/TITLE} </final>");
           xPathLexer lexer = new xPathLexer(input);
           CommonTokenStream tokens = new CommonTokenStream(lexer);
           xPathParser parser = new xPathParser(tokens);
           parser.removeErrorListeners();
-          ParseTree tree = parser.ap();
+          ParseTree tree = parser.xq();
           EvalXpath evalpath = new EvalXpath();
           List<Node> ret = evalpath.visit(tree);
           System.out.println("now in the final");
           for(Node n : ret) {
             System.out.println("ret name: " + n.getNodeName() + " " + "ret txt  " + n.getTextContent());
           }
-    } catch (Exception e) {
+        } catch (Exception e) {
           e.printStackTrace();
           System.err.println("Error: " + e.getMessage());
     }

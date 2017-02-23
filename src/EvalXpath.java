@@ -7,6 +7,7 @@
 import javax.management.ListenerNotFoundException;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.ParserConfigurationException;
 
 import com.sun.org.apache.xalan.internal.xsltc.compiler.XPathParser;
 import com.sun.org.apache.xpath.internal.operations.Bool;
@@ -23,17 +24,28 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
-import org.w3c.dom.Element;
-import org.w3c.dom.xpath.XPathEvaluator;
 
 import java.io.File;
 import java.util.Set;
 
-public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHelper{
+public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHelper {
 
   private  Node currentNode;
+
   private Document resDoc;
+
   private Map<String, List<Node>> context = new HashMap<>();
+
+  public void createDoc() {
+    if(resDoc == null) {
+      try {
+        resDoc = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
+      } catch (ParserConfigurationException e) {
+        e.printStackTrace();
+        System.err.println("Error: " + e.getMessage());
+      }
+    }
+  }
   @Override
   public List<Node> visitApsl(xPathParser.ApslContext ctx) {
     String fileName = ctx.NAME().getText();
@@ -331,10 +343,11 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
 
   public List<Node> makeElement(String t, List<Node> l) {
     //take a tag name t and a list of XML nodes l and return a new XML element node n with tag(n) = t and children(n)=copy(l)
+    createDoc();
     Node ret = resDoc.createElement(t);
     for(Node n : l) {
       if(n!=null) {
-        ret.appendChild(n.cloneNode(true));
+        ret.appendChild(resDoc.importNode(n, true));
       }
     }
     List<Node> res = new ArrayList<>();
@@ -448,6 +461,8 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
 
   public List<Node> visitTagNameXQ(xPathParser.TagNameXQContext ctx) {
     List<Node> l = visitXQ(ctx.xq());
+    if(l == null) System.out.println("Oh, null list!");
+    else System.out.println("size is " + l.size());
     return makeElement(ctx.NAME().get(0).getText(), l);
   }
 
