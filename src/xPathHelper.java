@@ -30,7 +30,6 @@ import java.util.List;
 
 public interface xPathHelper {
 
-  List<Node> absoLute(xPathParser.ApContext ctx);
 
   List<Node> relaTive(xPathParser.RpContext ctx, Node n);
 

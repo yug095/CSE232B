@@ -163,4 +163,174 @@ public interface xPathVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitParensFilter(xPathParser.ParensFilterContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code flwrXQ}
+	 * labeled alternative in {@link xPathParser#xq}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFlwrXQ(xPathParser.FlwrXQContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code singleSlashXQ}
+	 * labeled alternative in {@link xPathParser#xq}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSingleSlashXQ(xPathParser.SingleSlashXQContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code tagNameXQ}
+	 * labeled alternative in {@link xPathParser#xq}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTagNameXQ(xPathParser.TagNameXQContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code apXQ}
+	 * labeled alternative in {@link xPathParser#xq}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitApXQ(xPathParser.ApXQContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code letXQ}
+	 * labeled alternative in {@link xPathParser#xq}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLetXQ(xPathParser.LetXQContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code parensXQ}
+	 * labeled alternative in {@link xPathParser#xq}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParensXQ(xPathParser.ParensXQContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code commaXQ}
+	 * labeled alternative in {@link xPathParser#xq}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCommaXQ(xPathParser.CommaXQContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code varXQ}
+	 * labeled alternative in {@link xPathParser#xq}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVarXQ(xPathParser.VarXQContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code scXQ}
+	 * labeled alternative in {@link xPathParser#xq}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitScXQ(xPathParser.ScXQContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code doubleSlashXQ}
+	 * labeled alternative in {@link xPathParser#xq}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDoubleSlashXQ(xPathParser.DoubleSlashXQContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link xPathParser#var}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVar(xPathParser.VarContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link xPathParser#forClause}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitForClause(xPathParser.ForClauseContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link xPathParser#letClause}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLetClause(xPathParser.LetClauseContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link xPathParser#whereClause}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitWhereClause(xPathParser.WhereClauseContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link xPathParser#returnClause}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitReturnClause(xPathParser.ReturnClauseContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code eq2Cond}
+	 * labeled alternative in {@link xPathParser#cond}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitEq2Cond(xPathParser.Eq2CondContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code orCond}
+	 * labeled alternative in {@link xPathParser#cond}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOrCond(xPathParser.OrCondContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code is2Cond}
+	 * labeled alternative in {@link xPathParser#cond}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIs2Cond(xPathParser.Is2CondContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code is1Cond}
+	 * labeled alternative in {@link xPathParser#cond}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIs1Cond(xPathParser.Is1CondContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code emptyCond}
+	 * labeled alternative in {@link xPathParser#cond}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitEmptyCond(xPathParser.EmptyCondContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code andCond}
+	 * labeled alternative in {@link xPathParser#cond}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAndCond(xPathParser.AndCondContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code eq1Cond}
+	 * labeled alternative in {@link xPathParser#cond}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitEq1Cond(xPathParser.Eq1CondContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code someSatisCond}
+	 * labeled alternative in {@link xPathParser#cond}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSomeSatisCond(xPathParser.SomeSatisCondContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code parensCond}
+	 * labeled alternative in {@link xPathParser#cond}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParensCond(xPathParser.ParensCondContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code notCond}
+	 * labeled alternative in {@link xPathParser#cond}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNotCond(xPathParser.NotCondContext ctx);
 }

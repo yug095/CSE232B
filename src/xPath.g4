@@ -1,7 +1,7 @@
 grammar xPath;
 
 ap  :   'doc''(' NAME ')' '/' rp          # apsl
-    |   'doc' '(' NAME ')' '/' rp         # apslsl
+    |   'doc' '(' NAME ')' '//' rp         # apslsl
     ;
 
 rp  :    NAME                             # tagName
@@ -23,11 +23,50 @@ filter:  rp                               # rpFilter
     |    rp '==' rp                       # is1Filter
     |    rp 'is' rp                       # is2Filter
     |    '(' filter ')'                   # parensFilter
-    |    filter AND filter                # andFilter
-    |    filter OR filter                 # orFilter
-    |    NOT filter                       # notFilter
+    |    filter 'and' filter              # andFilter
+    |    filter 'or' filter               # orFilter
+    |    'not' filter                     # notFilter
     ;
 
+
+xq  :   var                               # varXQ
+    |   StringConstant                    # scXQ
+    |   ap                                # apXQ
+    |   '(' xq ')'                        # parensXQ
+    |   xq ',' xq                         # commaXQ
+    |   xq '/' rp                         # singleSlashXQ
+    |   xq '//' rp                        # doubleSlashXQ
+    |   '<' NAME '>' '{' xq '}' '<''/'NAME'>'  # tagNameXQ
+    |   forClause letClause? whereClause? returnClause  # flwrXQ
+    |   letClause xq                      # letXQ
+    ;
+
+var : '$' NAME
+    ;
+
+forClause: 'for' var 'in' xq (',' var 'in' xq)*
+    ;
+
+letClause: 'let' var ':=' xq (',' var ':=' xq)*
+    ;
+
+whereClause: 'where' cond
+    ;
+
+returnClause: 'return' xq
+    ;
+
+cond: xq '=' xq                            # eq1Cond
+    | xq 'eq' xq                           # eq2Cond
+    | xq '==' xq                           # is1Cond
+    | xq 'is' xq                           # is2Cond
+    | 'empty' '(' xq ')'                   # emptyCond
+    | 'some' var 'in' xq (var 'in' xq)* 'satisfies' cond  # someSatisCond
+    | '(' cond ')'                         # parensCond
+    | cond 'and' cond                      # andCond
+    | cond 'or'  cond                      # orCond
+    | 'not' cond                           # notCond
+    ;
 
 
 NAME     : [a-zA-Z]+ ;
@@ -36,8 +75,6 @@ DOT      : '.'       ;
 PARENT   : '..'      ;
 TEXT     : 'text()'  ;
 AT       : '@'       ;
-AND      : 'and'     ;
-OR       : 'or'      ;
-NOT      : 'not'     ;
+StringConstant: '"'+[a-zA-Z0-9,.!?; _''""-]+'"';
 WS : [ \t\r\n]+ -> skip;
 
