@@ -9,19 +9,14 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.ParserConfigurationException;
 
-import com.sun.org.apache.xalan.internal.xsltc.compiler.XPathParser;
-import com.sun.org.apache.xpath.internal.operations.Bool;
-import com.sun.webkit.dom.NodeImpl;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
-import org.w3c.dom.*;
 import java.lang.*;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 
@@ -341,8 +336,9 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
 
   //Below is what we add for milestone 2
 
+
+  //take a tag name t and a list of XML nodes l and return a new XML element node n with tag(n) = t and children(n)=copy(l)
   public List<Node> makeElement(String t, List<Node> l) {
-    //take a tag name t and a list of XML nodes l and return a new XML element node n with tag(n) = t and children(n)=copy(l)
     createDoc();
     Node ret = resDoc.createElement(t);
     for(Node n : l) {
@@ -355,14 +351,15 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
     return res;
   }
 
+  //takes as  a String constant s and return an XML TEXT NODE WITH VALUE S
   public List<Node> makeText(String s) {
-    //takes as  a String constant s and return an XML TEXT NODE WITH VALUE S
     createDoc();
     List<Node> ret = new ArrayList<>();
     ret.add(resDoc.createTextNode(s));
     return ret;
   }
 
+  //This function record the var in the context to the value v.
   Map<String, List<Node>>  assign(String var, List<Node> v) {
     context.put(var, v);
     return context;
@@ -490,6 +487,7 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
   }
 
 
+  //This is a helper function to make it easier for visitFlwrXQ to recusive.
   public void flwrHelper(List<xPathParser.VarContext> varList, List<xPathParser.XqContext> xqList, int i, List<xPathParser.VarContext> letvarList, List<xPathParser.XqContext> letxqList, xPathParser.XqContext finalXq, xPathParser.CondContext condctx,  List<Node> ret) {
     if(i == varList.size()) {
       for(int j=0; j<letvarList.size();j++) {
