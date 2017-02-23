@@ -18,6 +18,7 @@
  * Created by gaoyue on 17/1/27.
  */
 
+import javax.management.ListenerNotFoundException;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
 
@@ -488,12 +489,36 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
   }
 
   public List<Node> visitFlwrXQ(xPathParser.FlwrXQContext ctx) {
-
-    // TODO: 17/2/21
-    return null;
+    List<xPathParser.VarContext> varList = ctx.forClause().var();
+    List<xPathParser.XqContext> xqList = ctx.forClause().xq();
+    List<xPathParser.VarContext> letvarList = ctx.letClause().var();
+    List<xPathParser.XqContext> letxqList = ctx.letClause().xq();
+    xPathParser.XqContext finalXq = ctx.returnClause().xq();
+    xPathParser.CondContext condctx = ctx.whereClause().cond();
+    List<Node> ret = new ArrayList<>();
+    flwrHelper(varList, xqList, 0, letvarList, letxqList, finalXq, condctx, ret);
+    return ret;
   }
 
 
+  public void flwrHelper(List<xPathParser.VarContext> varList, List<xPathParser.XqContext> xqList, int i, List<xPathParser.VarContext> letvarList, List<xPathParser.XqContext> letxqList, xPathParser.XqContext finalXq, xPathParser.CondContext condctx,  List<Node> ret) {
+    if(i == varList.size()) {
+      for(int j=0; j<letvarList.size();j++) {
+        List<Node> value = visitXQ(letxqList.get(i));
+        context = assign(letvarList.get(i).NAME().getText(), value, context );
+      }
+      if(visitCond(condctx)) {
+        ret.addAll(visitXQ(finalXq));
+      }
+    }
+    List<Node> nodeList = visitXQ(xqList.get(i));
+    for(Node node : nodeList) {
+      List<Node> l = new ArrayList<>();
+      l.add(node);
+      context = assign(varList.get(i).NAME().getText(), l, context);
+      flwrHelper(varList, xqList, i+1, letvarList, letxqList, finalXq, condctx, ret);
+    }
+  }
 
   public boolean visitCond(xPathParser.CondContext ctx) {
     if(ctx instanceof xPathParser.Eq1CondContext) {
@@ -532,12 +557,32 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
 
 
   public boolean myVisitEq1Cond (xPathParser.Eq1CondContext ctx) {
-    // TODO: 17/2/21
-    return true;
+    xPathParser.XqContext xq1 =ctx.xq(0);
+    xPathParser.XqContext xq2 = ctx.xq(1);
+    List<Node> l1 = visitXQ(xq1);
+    List<Node> l2 = visitXQ(xq2);
+    for(Node i : l1) {
+      for(Node j : l2) {
+        if(i.isEqualNode(j)) {
+          return true;
+        }
+      }
+    }
+    return false;
   }
   public boolean myVisitEq2Cond(xPathParser.Eq2CondContext ctx) {
-    // TODO: 17/2/21
-    return true;
+    xPathParser.XqContext xq1 =ctx.xq(0);
+    xPathParser.XqContext xq2 = ctx.xq(1);
+    List<Node> l1 = visitXQ(xq1);
+    List<Node> l2 = visitXQ(xq2);
+    for(Node i : l1) {
+      for(Node j : l2) {
+        if(i.isEqualNode(j)) {
+          return true;
+        }
+      }
+    }
+    return false;
   }
 
   public boolean myVisitIs1Cond(xPathParser.Is1CondContext ctx ) {

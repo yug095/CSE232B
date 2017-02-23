@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84efe265-160e-487f-87f4-4d47825dd9b6" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/EvalXpath.class" afterPath="$PROJECT_DIR$/out/production/milestone/EvalXpath.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/EvalXpath.java" afterPath="$PROJECT_DIR$/src/EvalXpath.java" />
     </list>
     <ignored path="milestone.iws" />
@@ -40,21 +42,21 @@
       <file leaf-file-name="EvalXpath.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/EvalXpath.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2365">
-              <caret line="378" column="17" selection-start-line="378" selection-start-column="17" selection-end-line="378" selection-end-column="17" />
+            <state relative-caret-position="8520">
+              <caret line="584" column="17" selection-start-line="584" selection-start-column="17" selection-end-line="584" selection-end-column="17" />
               <folding>
-                <element signature="e#0#19562#0" expanded="true" />
+                <element signature="e#0#21494#0" expanded="true" />
                 <element signature="imports" expanded="true" />
-                <element signature="e#12225#12226#0" expanded="true" />
-                <element signature="e#12258#12259#0" expanded="true" />
-                <element signature="e#14148#14149#0" expanded="true" />
-                <element signature="e#14182#14183#0" expanded="true" />
-                <element signature="e#18131#18132#0" expanded="true" />
-                <element signature="e#18175#18176#0" expanded="true" />
-                <element signature="e#19152#19153#0" expanded="true" />
-                <element signature="e#19190#19191#0" expanded="true" />
-                <element signature="e#19519#19520#0" expanded="true" />
-                <element signature="e#19558#19559#0" expanded="true" />
+                <element signature="e#12276#12277#0" expanded="true" />
+                <element signature="e#12309#12310#0" expanded="true" />
+                <element signature="e#14199#14200#0" expanded="true" />
+                <element signature="e#14233#14234#0" expanded="true" />
+                <element signature="e#20063#20064#0" expanded="true" />
+                <element signature="e#20107#20108#0" expanded="true" />
+                <element signature="e#21084#21085#0" expanded="true" />
+                <element signature="e#21122#21123#0" expanded="true" />
+                <element signature="e#21451#21452#0" expanded="true" />
+                <element signature="e#21490#21491#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -560,18 +562,18 @@
         <state relative-caret-position="960">
           <caret line="64" column="5" selection-start-line="63" selection-start-column="79" selection-end-line="64" selection-end-column="5" />
           <folding>
-            <element signature="e#0#19562#0" expanded="true" />
+            <element signature="e#0#21494#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#12225#12226#0" expanded="true" />
-            <element signature="e#12258#12259#0" expanded="true" />
-            <element signature="e#14148#14149#0" expanded="true" />
-            <element signature="e#14182#14183#0" expanded="true" />
-            <element signature="e#18131#18132#0" expanded="true" />
-            <element signature="e#18175#18176#0" expanded="true" />
-            <element signature="e#19152#19153#0" expanded="true" />
-            <element signature="e#19190#19191#0" expanded="true" />
-            <element signature="e#19519#19520#0" expanded="true" />
-            <element signature="e#19558#19559#0" expanded="true" />
+            <element signature="e#12276#12277#0" expanded="true" />
+            <element signature="e#12309#12310#0" expanded="true" />
+            <element signature="e#14199#14200#0" expanded="true" />
+            <element signature="e#14233#14234#0" expanded="true" />
+            <element signature="e#20063#20064#0" expanded="true" />
+            <element signature="e#20107#20108#0" expanded="true" />
+            <element signature="e#21084#21085#0" expanded="true" />
+            <element signature="e#21122#21123#0" expanded="true" />
+            <element signature="e#21451#21452#0" expanded="true" />
+            <element signature="e#21490#21491#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -894,14 +896,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/xPath.g4">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
@@ -910,23 +904,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/EvalXpath.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2365">
-          <caret line="378" column="17" selection-start-line="378" selection-start-column="17" selection-end-line="378" selection-end-column="17" />
+        <state relative-caret-position="8520">
+          <caret line="584" column="17" selection-start-line="584" selection-start-column="17" selection-end-line="584" selection-end-column="17" />
           <folding>
-            <element signature="e#0#19562#0" expanded="true" />
+            <element signature="e#0#21494#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#12225#12226#0" expanded="true" />
-            <element signature="e#12258#12259#0" expanded="true" />
-            <element signature="e#14148#14149#0" expanded="true" />
-            <element signature="e#14182#14183#0" expanded="true" />
-            <element signature="e#18131#18132#0" expanded="true" />
-            <element signature="e#18175#18176#0" expanded="true" />
-            <element signature="e#19152#19153#0" expanded="true" />
-            <element signature="e#19190#19191#0" expanded="true" />
-            <element signature="e#19519#19520#0" expanded="true" />
-            <element signature="e#19558#19559#0" expanded="true" />
+            <element signature="e#12276#12277#0" expanded="true" />
+            <element signature="e#12309#12310#0" expanded="true" />
+            <element signature="e#14199#14200#0" expanded="true" />
+            <element signature="e#14233#14234#0" expanded="true" />
+            <element signature="e#20063#20064#0" expanded="true" />
+            <element signature="e#20107#20108#0" expanded="true" />
+            <element signature="e#21084#21085#0" expanded="true" />
+            <element signature="e#21122#21123#0" expanded="true" />
+            <element signature="e#21451#21452#0" expanded="true" />
+            <element signature="e#21490#21491#0" expanded="true" />
           </folding>
         </state>
       </provider>
