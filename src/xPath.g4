@@ -5,11 +5,11 @@ ap          :    DOC '(' StringConstant ')''/'rp                     # apsl
             ;
 
 rp          :    NAME                                                # tagName
-            |    STAR                                                # star
-            |    DOT                                                 # dot
-            |    PARENT                                              # parent
+            |    '*'                                                 # star
+            |    '.'                                                 # dot
+            |    '..'                                                # parent
             |    TEXT                                                # text
-            |    AT NAME                                             # attribute
+            |    '@' NAME                                            # attribute
             |    '(' rp ')'                                          # parens
             |    rp '/' rp                                           # singleSlashRp
             |    rp '//' rp                                          # doubleSlashRp
@@ -73,10 +73,6 @@ DOC         :    'doc'
             |    'document'
             ;
 NAME        :    [a-zA-Z0-9._]+ ;
-STAR        :    '*'       ;
-DOT         :    '.'       ;
-PARENT      :    '..'      ;
 TEXT        :    'text()'  ;
-AT          :    '@'       ;
 WS          :    [ \t\r\n]+ -> skip;
 StringConstant: '"'+[a-zA-Z0-9,.!?; _''""-]+'"';

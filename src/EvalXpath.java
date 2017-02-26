@@ -88,7 +88,6 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
   public List<Node> visitDot(xPathParser.DotContext ctx, Node n) {
     List<Node> ret = new ArrayList<>();
     ret.add(n);
-    System.out.println("inside dot?");
     return ret;
   }
 
@@ -380,13 +379,10 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
   public List<Node> visitApXQ(xPathParser.ApXQContext ctx) {
     List<Node> ret = new ArrayList<>();
     if(ctx.ap() instanceof xPathParser.ApslContext) {
-      System.out.println("inside1");
       ret = visitApsl((xPathParser.ApslContext) ctx.ap());
     } else {
-      System.out.println("inside2");
       ret = visitApslsl((xPathParser.ApslslContext) ctx.ap());
     }
-    System.out.println("after visit, size is " + ret.size());
     return ret;
   }
   public List<Node> visitXQ(xPathParser.XqContext ctx) {
@@ -502,7 +498,7 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
       }
     } else {
       List<Node> nodeList = visitXQ(xqList.get(i));
-      System.out.println("size is : " + nodeList.size()+ " i is : " + i + " varsize is " + varList.size() );
+//      System.out.println("size is : " + nodeList.size()+ " i is : " + i + " varsize is " + varList.size() );
       for (Node node : nodeList) {
 
         List<Node> l = new ArrayList<>();

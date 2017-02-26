@@ -14,14 +14,21 @@ public class App {
   public static void main(String[] args) {
     try {
 
-      String test = "doc(\"j_caesar.xml\")//ACT[./TITLE]/*/SPEECH/../TITLE";
+      String test = "<acts> \n" +
+        "\t{\n" +
+        "\t\tfor $a in document(\"j_caesar.xml\")//ACT \n" +
+        "\t\t\twhere not empty ( \n" +
+        "\t\t\t\tfor $sp in $a/SCENE/SPEECH \n" +
+        "\t\t\t\t\twhere ($sp/SPEAKER/text() = \"FLAVIUS\" and $sp/../TITLE/text()=\"SCENE I. Rome. A street.\") \n" +
+        "\t\t\t\t\t\treturn <speaker> {$sp/text()} </speaker> )\n" +
+        "\t\t\treturn <act>{$a/TITLE/text()}</act>} </acts>";
 
       ANTLRInputStream input = new ANTLRInputStream(test);
       xPathLexer lexer = new xPathLexer(input);
       CommonTokenStream tokens = new CommonTokenStream(lexer);
       xPathParser parser = new xPathParser(tokens);
       parser.removeErrorListeners();
-      ParseTree tree = parser.ap();
+      ParseTree tree = parser.xq();
       EvalXpath evalpath = new EvalXpath();
       List<Node> ret = evalpath.visit(tree);
           /*for(Nod n : ret) {
