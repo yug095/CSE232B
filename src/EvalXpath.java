@@ -43,8 +43,7 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
   }
   @Override
   public List<Node> visitApsl(xPathParser.ApslContext ctx) {
-    String fileName = ctx.NAME().getText();
-
+    String fileName = ctx.StringConstant().getText().substring(1, ctx.StringConstant().getText().length()-1);
     Node root = root(fileName);
 
     xPathParser.RpContext rpctx = ctx.rp();
@@ -55,7 +54,7 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
   @Override
   public List<Node> visitApslsl(xPathParser.ApslslContext ctx) {
     xPathParser.RpContext rp =ctx.rp();
-    String fileName = ctx.NAME().getText();
+    String fileName = ctx.StringConstant().getText().substring(1, ctx.StringConstant().getText().length()-1);
     List<Node> nList = doubeSlash(new xPathParser.DotContext(new xPathParser.RpContext()), rp, root(fileName));
     return nList;
   }
@@ -89,6 +88,7 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
   public List<Node> visitDot(xPathParser.DotContext ctx, Node n) {
     List<Node> ret = new ArrayList<>();
     ret.add(n);
+    System.out.println("inside dot?");
     return ret;
   }
 
@@ -173,7 +173,7 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
   }
 
   public boolean visitEq2Filter (xPathParser.Eq2FilterContext ctx, Node n) {
-      return true;
+    return true;
   }
 
   public boolean visitIs1Filter (xPathParser.Is1FilterContext ctx, Node n) {
@@ -210,7 +210,7 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
   public boolean visitOrFilter (xPathParser.OrFilterContext ctx, Node n) {
     return filTer(ctx.filter().get(0), n) || filTer(ctx.filter().get(1), n);
   }
-  
+
 
   public List<Node> relaTive(xPathParser.RpContext ctx, Node n) {
     if (ctx instanceof xPathParser.TagNameContext) {
@@ -281,7 +281,7 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
 
   public Node root(String fileName) {
 
-    File fXmlFile = new File("/Users/gaoyue/Desktop/CSE_232b/" + fileName + ".xml");
+    File fXmlFile = new File("/Users/gaoyue/Desktop/CSE_232b/" + fileName);
     DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
     try {
       DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -333,9 +333,7 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
     return nList;
   }
 
-
   //Below is what we add for milestone 2
-
 
   //take a tag name t and a list of XML nodes l and return a new XML element node n with tag(n) = t and children(n)=copy(l)
   public List<Node> makeElement(String t, List<Node> l) {
@@ -368,23 +366,28 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
   List<Node> getValue(String var) {
     return context.get(var);
   }
-  
+
   public List<Node> visitVarXQ(xPathParser.VarXQContext ctx) {
     String s = ctx.var().NAME().getText();
     return getValue(s);
   }
-  
+
   public List<Node> visitScXQ(xPathParser.ScXQContext ctx) {
     String sc = ctx.StringConstant().getText().substring(1, ctx.StringConstant().getText().length()-1);
     return makeText(sc);
   }
 
   public List<Node> visitApXQ(xPathParser.ApXQContext ctx) {
+    List<Node> ret = new ArrayList<>();
     if(ctx.ap() instanceof xPathParser.ApslContext) {
-      return visitApsl((xPathParser.ApslContext) ctx.ap());
+      System.out.println("inside1");
+      ret = visitApsl((xPathParser.ApslContext) ctx.ap());
     } else {
-      return visitApslsl((xPathParser.ApslslContext) ctx.ap());
+      System.out.println("inside2");
+      ret = visitApslsl((xPathParser.ApslslContext) ctx.ap());
     }
+    System.out.println("after visit, size is " + ret.size());
+    return ret;
   }
   public List<Node> visitXQ(xPathParser.XqContext ctx) {
     if(ctx instanceof xPathParser.VarXQContext) {
@@ -422,7 +425,7 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
   public List<Node> visitParensXQ(xPathParser.ParensXQContext ctx) {
     return visitXQ(ctx.xq());
   }
-  
+
   public List<Node> visitCommaXQ(xPathParser.CommaXQContext ctx) {
     List<Node> ret = new LinkedList<>();
     xPathParser.XqContext xq1 = ctx.xq(0);
@@ -431,7 +434,7 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
     ret.addAll(visitXQ(xq2));
     return ret;
   }
-  
+
   public List<Node> visitSingleSlashXQ(xPathParser.SingleSlashXQContext ctx) {
     xPathParser.XqContext xq = ctx.xq();
     xPathParser.RpContext rp = ctx.rp();
@@ -445,7 +448,7 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
     }
     return new ArrayList<>(set);
   }
-  
+
   public List<Node> visitDoubleSlashXQ(xPathParser.DoubleSlashXQContext ctx) {
     xPathParser.XqContext xq = ctx.xq();
     xPathParser.RpContext rp = ctx.rp();
@@ -491,15 +494,17 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
   public void flwrHelper(List<xPathParser.VarContext> varList, List<xPathParser.XqContext> xqList, int i, List<xPathParser.VarContext> letvarList, List<xPathParser.XqContext> letxqList, xPathParser.XqContext finalXq, xPathParser.CondContext condctx,  List<Node> ret) {
     if(i == varList.size()) {
       for(int j=0; j<letvarList.size();j++) {
-        List<Node> value = visitXQ(letxqList.get(i));
-        context = assign(letvarList.get(i).NAME().getText(), value);
+        List<Node> value = visitXQ(letxqList.get(j));
+        context = assign(letvarList.get(j).NAME().getText(), value);
       }
       if(condctx == null || visitCond(condctx)) {
         ret.addAll(visitXQ(finalXq));
       }
     } else {
       List<Node> nodeList = visitXQ(xqList.get(i));
+      System.out.println("size is : " + nodeList.size()+ " i is : " + i + " varsize is " + varList.size() );
       for (Node node : nodeList) {
+
         List<Node> l = new ArrayList<>();
         l.add(node);
         context = assign(varList.get(i).NAME().getText(), l);
@@ -596,6 +601,7 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
   }
 
   public boolean myVisitSomeSatisCond(xPathParser.SomeSatisCondContext ctx) {
+
     List<Boolean> ret = new ArrayList<>();
     boolean r = false;
     ret.add(r);
@@ -608,16 +614,23 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
 
   public void getCond(List<xPathParser.VarContext> varList, List<xPathParser.XqContext> xqList, int i, List<Boolean> ret, xPathParser.CondContext cond) {
     if(i == varList.size()) {
-      boolean r = true;
-      ret.clear();
-      ret.add(r);
+//      System.out.println("Does it ever went here?");
+      if(visitCond(cond)) {
+        boolean r = true;
+        ret.clear();
+        ret.add(r);
     }
-    List<Node> nodeList = visitXQ(xqList.get(i));
-    for(Node node : nodeList) {
-      List<Node> l = new ArrayList<>();
-      l.add(node);
-      context = assign(varList.get(i).NAME().getText(), l);
-      getCond(varList, xqList, i+1, ret, cond);
+    } else {
+      List<Node> nodeList = visitXQ(xqList.get(i));
+//      System.out.println("nodeList size is : " + nodeList.size());
+//      System.out.println("var is : " + varList.get(i).NAME().getText());
+      for (Node node : nodeList) {
+        List<Node> l = new ArrayList<>();
+        l.add(node);
+        context = assign(varList.get(i).NAME().getText(), l);
+//        System.out.println("i is : "  + i + " varlist size is " + varList.size());
+        getCond(varList, xqList, i + 1, ret, cond);
+      }
     }
   }
 
