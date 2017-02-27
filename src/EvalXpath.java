@@ -3,8 +3,6 @@
 /**
  * Created by gaoyue on 17/1/27.
  */
-
-import javax.management.ListenerNotFoundException;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.ParserConfigurationException;
@@ -25,10 +23,7 @@ import java.util.Set;
 
 public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHelper {
 
-  private  Node currentNode;
-
   private Document resDoc;
-
   private Map<String, List<Node>> context = new HashMap<>();
 
   public void createDoc() {
@@ -498,7 +493,6 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
       }
     } else {
       List<Node> nodeList = visitXQ(xqList.get(i));
-//      System.out.println("size is : " + nodeList.size()+ " i is : " + i + " varsize is " + varList.size() );
       for (Node node : nodeList) {
 
         List<Node> l = new ArrayList<>();
@@ -610,7 +604,6 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
 
   public void getCond(List<xPathParser.VarContext> varList, List<xPathParser.XqContext> xqList, int i, List<Boolean> ret, xPathParser.CondContext cond) {
     if(i == varList.size()) {
-//      System.out.println("Does it ever went here?");
       if(visitCond(cond)) {
         boolean r = true;
         ret.clear();
@@ -618,13 +611,10 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
     }
     } else {
       List<Node> nodeList = visitXQ(xqList.get(i));
-//      System.out.println("nodeList size is : " + nodeList.size());
-//      System.out.println("var is : " + varList.get(i).NAME().getText());
       for (Node node : nodeList) {
         List<Node> l = new ArrayList<>();
         l.add(node);
         context = assign(varList.get(i).NAME().getText(), l);
-//        System.out.println("i is : "  + i + " varlist size is " + varList.size());
         getCond(varList, xqList, i + 1, ret, cond);
       }
     }
@@ -645,4 +635,18 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
   public boolean myVisitNotCond(xPathParser.NotCondContext ctx) {
     return !visitCond(ctx.cond());
   }
+
+
+
+  public void display(Node node) {
+      System.out.println('<' + node.getNodeName() + '>');
+      if (node.getChildNodes() != null) {
+        for (int i = 0; i < node.getChildNodes().getLength(); i++) {
+          if (node.getChildNodes().item(i).getNodeName() == "#text") {
+            System.out.println(node.getTextContent());
+          } else display(node.getChildNodes().item(i));
+        }
+      }
+      System.out.println("</" + node.getNodeName() + '>');
+    }
 }
