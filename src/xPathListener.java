@@ -379,6 +379,18 @@ public interface xPathListener extends ParseTreeListener {
 	 */
 	void exitScXQ(xPathParser.ScXQContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code joinXQ}
+	 * labeled alternative in {@link xPathParser#xq}.
+	 * @param ctx the parse tree
+	 */
+	void enterJoinXQ(xPathParser.JoinXQContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code joinXQ}
+	 * labeled alternative in {@link xPathParser#xq}.
+	 * @param ctx the parse tree
+	 */
+	void exitJoinXQ(xPathParser.JoinXQContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code doubleSlashXQ}
 	 * labeled alternative in {@link xPathParser#xq}.
 	 * @param ctx the parse tree
@@ -440,6 +452,26 @@ public interface xPathListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitReturnClause(xPathParser.ReturnClauseContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link xPathParser#joinClause}.
+	 * @param ctx the parse tree
+	 */
+	void enterJoinClause(xPathParser.JoinClauseContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link xPathParser#joinClause}.
+	 * @param ctx the parse tree
+	 */
+	void exitJoinClause(xPathParser.JoinClauseContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link xPathParser#varList}.
+	 * @param ctx the parse tree
+	 */
+	void enterVarList(xPathParser.VarListContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link xPathParser#varList}.
+	 * @param ctx the parse tree
+	 */
+	void exitVarList(xPathParser.VarListContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code eq2Cond}
 	 * labeled alternative in {@link xPathParser#cond}.

@@ -4,7 +4,10 @@
     <list default="true" id="84efe265-160e-487f-87f4-4d47825dd9b6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/App.class" afterPath="$PROJECT_DIR$/out/production/milestone/App.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/EvalXpath.class" afterPath="$PROJECT_DIR$/out/production/milestone/EvalXpath.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathBaseListener.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathBaseListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathBaseVisitor.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathBaseVisitor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathLexer.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathLexer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathListener.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathListener.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$AndCondContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$AndCondContext.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$AndFilterContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$AndFilterContext.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$ApXQContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$ApXQContext.class" />
@@ -42,7 +45,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$ParensXQContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$ParensXQContext.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$ParentContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$ParentContext.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$ReturnClauseContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$ReturnClauseContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$RpContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$RpContext.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$RpFilterContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$RpFilterContext.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$ScXQContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$ScXQContext.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$SingleSlashRpContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$SingleSlashRpContext.class" />
@@ -57,9 +59,14 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$WhereClauseContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$WhereClauseContext.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$XqContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$XqContext.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathVisitor.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathVisitor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathBaseListener.class" afterPath="$PROJECT_DIR$/src/xPathBaseListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathBaseVisitor.class" afterPath="$PROJECT_DIR$/src/xPathBaseVisitor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathLexer.class" afterPath="$PROJECT_DIR$/src/xPathLexer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathListener.class" afterPath="$PROJECT_DIR$/src/xPathListener.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$AndCondContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$AndCondContext.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$AndFilterContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$AndFilterContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$ApContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$ApContext.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$ApXQContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$ApXQContext.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$ApslContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$ApslContext.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$ApslslContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$ApslslContext.class" />
@@ -110,6 +117,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$WhereClauseContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$WhereClauseContext.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$XqContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$XqContext.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser.class" afterPath="$PROJECT_DIR$/src/xPathParser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathVisitor.class" afterPath="$PROJECT_DIR$/src/xPathVisitor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPath.g4" afterPath="$PROJECT_DIR$/out/production/milestone/xPath.g4" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPath.tokens" afterPath="$PROJECT_DIR$/out/production/milestone/xPath.tokens" />
@@ -118,9 +126,13 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/EvalXpath.java" afterPath="$PROJECT_DIR$/src/EvalXpath.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPath.g4" afterPath="$PROJECT_DIR$/src/xPath.g4" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPath.tokens" afterPath="$PROJECT_DIR$/src/xPath.tokens" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathBaseListener.java" afterPath="$PROJECT_DIR$/src/xPathBaseListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathBaseVisitor.java" afterPath="$PROJECT_DIR$/src/xPathBaseVisitor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathLexer.java" afterPath="$PROJECT_DIR$/src/xPathLexer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathLexer.tokens" afterPath="$PROJECT_DIR$/src/xPathLexer.tokens" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathListener.java" afterPath="$PROJECT_DIR$/src/xPathListener.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser.java" afterPath="$PROJECT_DIR$/src/xPathParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathVisitor.java" afterPath="$PROJECT_DIR$/src/xPathVisitor.java" />
     </list>
     <ignored path="milestone.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -148,43 +160,33 @@
       <file leaf-file-name="xPath.g4" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/xPath.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="23" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="23" />
+            <state relative-caret-position="885">
+              <caret line="59" column="50" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EvalXpath.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EvalXpath.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/EvalXpath.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="89" column="15" selection-start-line="89" selection-start-column="15" selection-end-line="89" selection-end-column="15" />
+            <state relative-caret-position="499">
+              <caret line="591" column="68" selection-start-line="591" selection-start-column="68" selection-end-line="591" selection-end-column="68" />
               <folding>
-                <element signature="e#0#21483#0" expanded="true" />
+                <element signature="e#0#25274#0" expanded="true" />
                 <element signature="imports" expanded="true" />
-                <element signature="e#2433#2434#0" expanded="true" />
-                <element signature="e#2461#2462#0" expanded="true" />
-                <element signature="e#2687#2688#0" expanded="true" />
-                <element signature="e#2710#2711#0" expanded="true" />
-                <element signature="e#2754#2755#0" expanded="true" />
-                <element signature="e#2781#2782#0" expanded="true" />
-                <element signature="e#5191#5192#0" expanded="true" />
-                <element signature="e#5212#5213#0" expanded="true" />
-                <element signature="e#5290#5291#0" expanded="true" />
-                <element signature="e#5311#5312#0" expanded="true" />
-                <element signature="e#5979#5980#0" expanded="true" />
-                <element signature="e#6019#6020#0" expanded="true" />
-                <element signature="e#6257#6258#0" expanded="true" />
-                <element signature="e#6298#6299#0" expanded="true" />
-                <element signature="e#10044#10045#0" expanded="true" />
-                <element signature="e#10076#10077#0" expanded="true" />
-                <element signature="e#11299#11300#0" expanded="true" />
-                <element signature="e#11332#11333#0" expanded="true" />
-                <element signature="e#13464#13465#0" expanded="true" />
-                <element signature="e#13498#13499#0" expanded="true" />
-                <element signature="e#19706#19707#0" expanded="true" />
-                <element signature="e#19750#19751#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Element.java" pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/src.zip!/org/w3c/dom/Element.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2250">
+              <caret line="189" column="20" selection-start-line="189" selection-start-column="20" selection-end-line="189" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#23825#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -193,8 +195,8 @@
       <file leaf-file-name="xPathParser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/xPathParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state relative-caret-position="1575">
+              <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -207,18 +209,6 @@
               <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding>
                 <element signature="e#565#566#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ErrorNodeImpl.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/../Tool/antlr-4.5.3-complete.jar!/org/antlr/v4/runtime/tree/ErrorNodeImpl.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding>
-                <element signature="e#566#567#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -249,20 +239,20 @@
       <file leaf-file-name="xPathBaseVisitor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/xPathBaseVisitor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2685">
-              <caret line="179" column="21" selection-start-line="179" selection-start-column="21" selection-end-line="179" selection-end-column="21" />
+            <state relative-caret-position="3525">
+              <caret line="235" column="30" selection-start-line="235" selection-start-column="26" selection-end-line="235" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="App.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="74" selection-start-line="16" selection-start-column="74" selection-end-line="16" selection-end-column="74" />
+            <state relative-caret-position="150">
+              <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
               <folding>
-                <element signature="e#0#1612#0" expanded="true" />
+                <element signature="e#0#1530#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
@@ -305,9 +295,9 @@
         <option value="$PROJECT_DIR$/src/xPathBaseVisitor.java" />
         <option value="$PROJECT_DIR$/src/xPathParser.java" />
         <option value="$PROJECT_DIR$/src/xPathHelper.java" />
+        <option value="$PROJECT_DIR$/src/App.java" />
         <option value="$PROJECT_DIR$/src/xPath.g4" />
         <option value="$PROJECT_DIR$/src/EvalXpath.java" />
-        <option value="$PROJECT_DIR$/src/App.java" />
       </list>
     </option>
   </component>
@@ -347,7 +337,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
@@ -388,6 +377,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -687,7 +677,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2430279" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25099602" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -720,7 +710,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="42" />
+      <option name="time" value="49" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -729,17 +719,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#1612#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../Tool/antlr-4.5.3-complete.jar!/org/antlr/v4/runtime/tree/AbstractParseTreeVisitor.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -802,7 +781,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4080">
           <caret line="274" column="5" selection-start-line="274" selection-start-column="5" selection-end-line="274" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -810,7 +788,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -826,7 +803,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -861,7 +837,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#1612#0" expanded="true" />
+            <element signature="e#0#1530#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -878,7 +854,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -886,7 +861,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="10" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -921,7 +895,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -967,7 +940,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1247">
           <caret line="485" column="36" selection-start-line="485" selection-start-column="24" selection-end-line="485" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -990,7 +962,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -998,9 +969,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#566#567#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1022,10 +990,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/xPathBaseVisitor.java">
+    <entry file="file://$PROJECT_DIR$/src/xPath.tokens">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2685">
-          <caret line="179" column="21" selection-start-line="179" selection-start-column="21" selection-end-line="179" selection-end-column="21" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1040,69 +1008,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/xPath.tokens">
+    <entry file="file://$PROJECT_DIR$/src/xPathBaseVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xPath.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="23" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="23" />
+        <state relative-caret-position="3525">
+          <caret line="235" column="30" selection-start-line="235" selection-start-column="26" selection-end-line="235" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/xPathParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        <state relative-caret-position="1575">
+          <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EvalXpath.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/src.zip!/org/w3c/dom/Element.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="89" column="15" selection-start-line="89" selection-start-column="15" selection-end-line="89" selection-end-column="15" />
+        <state relative-caret-position="2250">
+          <caret line="189" column="20" selection-start-line="189" selection-start-column="20" selection-end-line="189" selection-end-column="20" />
           <folding>
-            <element signature="e#0#21483#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#2433#2434#0" expanded="true" />
-            <element signature="e#2461#2462#0" expanded="true" />
-            <element signature="e#2687#2688#0" expanded="true" />
-            <element signature="e#2710#2711#0" expanded="true" />
-            <element signature="e#2754#2755#0" expanded="true" />
-            <element signature="e#2781#2782#0" expanded="true" />
-            <element signature="e#5191#5192#0" expanded="true" />
-            <element signature="e#5212#5213#0" expanded="true" />
-            <element signature="e#5290#5291#0" expanded="true" />
-            <element signature="e#5311#5312#0" expanded="true" />
-            <element signature="e#5979#5980#0" expanded="true" />
-            <element signature="e#6019#6020#0" expanded="true" />
-            <element signature="e#6257#6258#0" expanded="true" />
-            <element signature="e#6298#6299#0" expanded="true" />
-            <element signature="e#10044#10045#0" expanded="true" />
-            <element signature="e#10076#10077#0" expanded="true" />
-            <element signature="e#11299#11300#0" expanded="true" />
-            <element signature="e#11332#11333#0" expanded="true" />
-            <element signature="e#13464#13465#0" expanded="true" />
-            <element signature="e#13498#13499#0" expanded="true" />
-            <element signature="e#19706#19707#0" expanded="true" />
-            <element signature="e#19750#19751#0" expanded="true" />
+            <element signature="e#0#23825#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xPath.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="885">
+          <caret line="59" column="50" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="74" selection-start-line="16" selection-start-column="74" selection-end-line="16" selection-end-column="74" />
+        <state relative-caret-position="150">
+          <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
           <folding>
-            <element signature="e#0#1612#0" expanded="true" />
+            <element signature="e#0#1530#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EvalXpath.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="591" column="68" selection-start-line="591" selection-start-column="68" selection-end-line="591" selection-end-column="68" />
+          <folding>
+            <element signature="e#0#25274#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>

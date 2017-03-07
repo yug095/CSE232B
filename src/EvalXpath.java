@@ -6,12 +6,20 @@
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
 import java.lang.*;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.ArrayList;
@@ -19,6 +27,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 
 import java.io.File;
+import java.io.StringWriter;
 import java.util.Set;
 
 public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHelper {
@@ -411,6 +420,9 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
     if(ctx instanceof xPathParser.LetXQContext) {
       return visitLetXQ((xPathParser.LetXQContext) ctx);
     }
+    if(ctx instanceof xPathParser.JoinXQContext) {
+      return visitJoinXQ((xPathParser.JoinXQContext) ctx);
+    }
     return null;
   }
   public List<Node> visitParensXQ(xPathParser.ParensXQContext ctx) {
@@ -468,6 +480,8 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
     return visitXQ(finalxq);
   }
 
+
+
   public List<Node> visitFlwrXQ(xPathParser.FlwrXQContext ctx) {
     List<xPathParser.VarContext> varList = ctx.forClause().var();
     List<xPathParser.XqContext> xqList = ctx.forClause().xq();
@@ -480,6 +494,100 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
     return ret;
   }
 
+  public List<Node> visitJoinXQ(xPathParser.JoinXQContext ctx) {
+    xPathParser.XqContext xq1 = ctx.joinClause().xq(0);
+    xPathParser.XqContext xq2 = ctx.joinClause().xq(1);
+    int varListSize = ctx.joinClause().varList(0).NAME().size();
+    List<String> varList1 = new ArrayList<>();
+    List<String> varList2 = new ArrayList<>();
+    for(int i=0;i<varListSize;i++) {
+      varList1.add(ctx.joinClause().varList(0).NAME(i).getText());
+      varList2.add(ctx.joinClause().varList(1).NAME(i).getText());
+    }
+    List<Node> xq1List = visitXQ(xq1);
+    List<Node> xq2List = visitXQ(xq2);
+    List<Map<String, List<Node>>> mapList = new ArrayList<>();
+
+    for(int i=0;i<varListSize;i++) {
+      String varName = varList1.get(i);
+      Map<String, List<Node>> map = new HashMap<>();
+      for(Node node : xq1List) {
+        String key0 = nodeToString(((Element) node).getElementsByTagName(varName).item(0));
+        System.out.println("node to string key is " + key0);
+        String key = key0.substring(2+varName.length(), key0.length()-2-1-varName.length());
+        List<Node> tmpList;
+        if(map.containsKey(key)) {
+          tmpList = map.get(key);
+          tmpList.add(node.cloneNode(true));
+        } else {
+          tmpList = new ArrayList<>();
+          tmpList.add(node.cloneNode(true));
+        }
+        map.put(key, tmpList);
+      }
+      mapList.add(i, map);
+    }
+
+    List<Node> retList = new ArrayList<>();
+    for(Node node : xq2List) {
+      List<Node> nodeJoinList = new ArrayList<>();
+      for(int i=0;i<varListSize;i++) {
+        String varName = varList2.get(i);
+        String key0 = nodeToString(((Element) node).getElementsByTagName(varName).item(0));
+        String key = key0.substring(2+varName.length(), key0.length()-2-1-varName.length());
+
+
+        //check if list(i) contains key, if not ,break
+        if(!mapList.get(i).containsKey(key)) {
+          break;
+        }
+        //else : update the compare list;
+        else {
+          if(i==0) nodeJoinList.addAll(mapList.get(i).get(key));
+          else {
+            List<Node> getList = mapList.get(i).get(key);
+            Set<String> nodeJoinSet = new HashSet<>();
+            List<Node> tmpJoinList = new ArrayList<>();
+            for(Node n : nodeJoinList) {
+              String nodeString = nodeToString(n);
+              nodeJoinSet.add(nodeString);
+            }
+            for(Node n : getList) {
+              String nString = nodeToString(n);
+              if(nodeJoinSet.contains(nString)) {
+                tmpJoinList.add(n.cloneNode(true));
+              }
+            }
+            nodeJoinList = tmpJoinList;
+          }
+        }
+      }
+      int childNum = node.getChildNodes().getLength();
+      for(Node joinNode : nodeJoinList) {
+        for(int k=0;k<childNum;k++) {
+          joinNode.appendChild(node.getChildNodes().item(k).cloneNode(true));
+        }
+      }
+      retList.addAll(nodeJoinList);
+    }
+
+    return retList;
+  }
+
+  public String nodeToString(Node n) {
+    try {
+      StringWriter writer = new StringWriter();
+      Transformer transformer = TransformerFactory.newInstance().newTransformer();
+      transformer.transform(new DOMSource(n), new StreamResult(writer));
+      return writer.toString();
+    } catch (TransformerConfigurationException e) {
+      e.printStackTrace();
+    }catch (TransformerException e) {
+      e.printStackTrace();
+    }
+    System.err.println("Error: Failed to transform node to String!");
+    return null;
+  }
 
   //This is a helper function to make it easier for visitFlwrXQ to recusive.
   public void flwrHelper(List<xPathParser.VarContext> varList, List<xPathParser.XqContext> xqList, int i, List<xPathParser.VarContext> letvarList, List<xPathParser.XqContext> letxqList, xPathParser.XqContext finalXq, xPathParser.CondContext condctx,  List<Node> ret) {

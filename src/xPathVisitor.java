@@ -227,6 +227,13 @@ public interface xPathVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitScXQ(xPathParser.ScXQContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code joinXQ}
+	 * labeled alternative in {@link xPathParser#xq}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitJoinXQ(xPathParser.JoinXQContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code doubleSlashXQ}
 	 * labeled alternative in {@link xPathParser#xq}.
 	 * @param ctx the parse tree
@@ -263,6 +270,18 @@ public interface xPathVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitReturnClause(xPathParser.ReturnClauseContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link xPathParser#joinClause}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitJoinClause(xPathParser.JoinClauseContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link xPathParser#varList}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVarList(xPathParser.VarListContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code eq2Cond}
 	 * labeled alternative in {@link xPathParser#cond}.

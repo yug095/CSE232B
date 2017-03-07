@@ -14,11 +14,23 @@ public class App {
     try {
 
       String test = "<result>{\n" +
-        "for $a in document(\"j_caesar.xml\")//PERSONAE, $b in $a/PERSONA \n" +
-        "  where not (($b/text() = \"JULIUS CAESAR\") or ($b/text() = \"Another Poet\") )\n" +
-        "   return $b\n" +
+        "\n" +
+        "for $s in document(\"j_caesar.xml\")//SCENE \n" +
+        " \n" +
+        "where $s//SPEAKER/text()=\"CAESAR\"\n" +
+        "return \n" +
+        "<scenes> { <scene> {$s/TITLE/text()} </scene>,\n" +
+        "\n" +
+        "for $a in document(\"j_caesar.xml\")//ACT\n" +
+        "where some $s1 in (for $x in $a//SCENE where $x/TITLE/text()=\"SCENE II. A public place.\" return $x) satisfies $s1 eq $s and $a/TITLE/text() = \"ACT I\"\n" +
+        "return <act>\n" +
+        "{$a/TITLE/text()}\n" +
+        "</act>\n" +
         "}\n" +
-        "</result>\n";
+        "</scenes>\n" +
+        "}\n" +
+        "</result>";
+
 
       ANTLRInputStream input = new ANTLRInputStream(test);
       xPathLexer lexer = new xPathLexer(input);

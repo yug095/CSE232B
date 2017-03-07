@@ -39,6 +39,7 @@ xq          :    var                                                 # varXQ
             |    '<' NAME '>' '{' xq '}' '<''/'NAME'>'               # tagNameXQ
             |    forClause letClause? whereClause? returnClause      # flwrXQ
             |    letClause xq                                        # letXQ
+            |    joinClause                                          # joinXQ
             ;
 
 var         :    '$' NAME
@@ -54,6 +55,12 @@ whereClause :    'where' cond
             ;
 
 returnClause:    'return' xq
+            ;
+
+joinClause  :    'join' '(' xq ',' xq ','  varList ',' varList ')'
+            ;
+
+varList     :    '[' NAME (',' NAME)* ']'
             ;
 
 cond        :    xq '=' xq                                           # eq1Cond
