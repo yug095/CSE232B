@@ -897,7 +897,7 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
     }
 
     joinString = "";
-    joinString += original + "return " + retString;
+    joinString += "for $tuple in " + original + "return " + retString;
 
     System.out.println("Now we test!");
     System.out.println();
@@ -926,18 +926,18 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
                   + constructRetList(((xPathParser.CommaSubReturnContext) ctx).subreturn(1));
     } else if (ctx instanceof xPathParser.VarSubReturnContext) {
 //      System.out.println("Ever in side?????");
-      return "$tuple/" + ((xPathParser.VarSubReturnContext) ctx).var().getText() + "/*,";
+      return "$tuple/" + ((xPathParser.VarSubReturnContext) ctx).var().NAME().getText() + "/*,";
     } else {
       if(((xPathParser.XqSubReturnContext)ctx).path() instanceof xPathParser.VarnodePathContext) {
-        String var = ((xPathParser.VarnodePathContext) ((xPathParser.XqSubReturnContext) ctx).path()).var().getText();
+        String var = ((xPathParser.VarnodePathContext) ((xPathParser.XqSubReturnContext) ctx).path()).var().NAME().getText();
         return "$tuple/" + var + "/*" +
           ((xPathParser.VarnodePathContext) ((xPathParser.XqSubReturnContext) ctx).path()).getText().
-            substring(var.length()) + ",";
+            substring(var.length()+1) + ",";
       } else {
-        String var = ((xPathParser.VartextPathContext) ((xPathParser.XqSubReturnContext) ctx).path()).var().getText();
+        String var = ((xPathParser.VartextPathContext) ((xPathParser.XqSubReturnContext) ctx).path()).var().NAME().getText();
         return "$tuple/" + var + "/*" +
           ((xPathParser.VartextPathContext) ((xPathParser.XqSubReturnContext) ctx).path()).getText().
-            substring(var.length()) + ",";
+            substring(var.length()+1) + ",";
       }
     }
   }
@@ -946,13 +946,16 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
 //    System.out.println("inside construct eqMap!");
     if(ctx instanceof xPathParser.VarStrEq1SubCondContext || ctx instanceof xPathParser.VarStrEq2SubCondContext) {
       xPathParser.VarContext var;
+      String constant;
       if(ctx instanceof xPathParser.VarStrEq1SubCondContext) {
         var = ((xPathParser.VarStrEq1SubCondContext) ctx).var();
+        constant = ((xPathParser.VarStrEq1SubCondContext) ctx).StringConstant().getText();
       } else {
         var = ((xPathParser.VarStrEq2SubCondContext) ctx).var();
+        constant = ((xPathParser.VarStrEq2SubCondContext) ctx).StringConstant().getText();
       }
       List<String> whereList = whereMap.getOrDefault(getRoot(var.NAME().getText()), new ArrayList<>());
-      whereList.add(ctx.getText());
+      whereList.add(var.getText() + " eq " + constant);
       whereMap.put(getRoot(var.NAME().getText()), whereList);
     } else if(ctx instanceof xPathParser.VarEq1SubCondContext || ctx instanceof xPathParser.VarEq2SubCondContext) {
         String  var1;
@@ -966,7 +969,7 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
         }
         if(getRoot(var1).equals(getRoot(var2))) {
           List<String> whereList = whereMap.getOrDefault(getRoot(var1), new ArrayList<>());
-          whereList.add(ctx.getText());
+          whereList.add(var1 + " eq " + var2);
           whereMap.put(getRoot(var1), whereList );
         } else {
           String root1 = getRoot(var1);
