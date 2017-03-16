@@ -12,7 +12,7 @@ import java.util.*;
 public class App {
   public static void main(String[] args) {
     try {
-
+      System.out.println("start!");
       String test = "for $b1 in doc(\"book.xml\")//book,\n" +
         "$aj in $b1/author/first/text(),\n" +
         "$a1 in $b1/author, \n" +
