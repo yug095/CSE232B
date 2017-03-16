@@ -1,82 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84efe265-160e-487f-87f4-4d47825dd9b6" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/xPathParser$NodePathContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/xPathParser$TextPathContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/xPathParser$VarStrEqSubCondContext.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/App.class" afterPath="$PROJECT_DIR$/out/production/milestone/App.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/EvalXpath.class" afterPath="$PROJECT_DIR$/out/production/milestone/EvalXpath.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathBaseListener.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathBaseListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathBaseVisitor.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathBaseVisitor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathListener.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$AndCondContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$AndCondContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$AndFilterContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$AndFilterContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$ApContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$ApContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$ApXQContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$ApXQContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$ApslContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$ApslContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$ApslslContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$ApslslContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$AttributeContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$AttributeContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$CommaRpContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$CommaRpContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$CommaXQContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$CommaXQContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$CondContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$CondContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$DotContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$DotContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$DoubleSlashRpContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$DoubleSlashRpContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$DoubleSlashXQContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$DoubleSlashXQContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$EmptyCondContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$EmptyCondContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$Eq1CondContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$Eq1CondContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$Eq1FilterContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$Eq1FilterContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$Eq2CondContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$Eq2CondContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$Eq2FilterContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$Eq2FilterContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$FilterContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$FilterContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$FilterRpContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$FilterRpContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$FlwrXQContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$FlwrXQContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$ForClauseContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$ForClauseContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$Is1CondContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$Is1CondContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$Is1FilterContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$Is1FilterContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$Is2CondContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$Is2CondContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$Is2FilterContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$Is2FilterContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$JoinClauseContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$JoinClauseContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$JoinXQContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$JoinXQContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$LetClauseContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$LetClauseContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$LetXQContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$LetXQContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$NotCondContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$NotCondContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$NotFilterContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$NotFilterContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$OrCondContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$OrCondContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$OrFilterContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$OrFilterContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$ParensCondContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$ParensCondContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$ParensContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$ParensContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$ParensFilterContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$ParensFilterContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$ParensXQContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$ParensXQContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$ParentContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$ParentContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$ReturnClauseContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$ReturnClauseContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$RpContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$RpContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$RpFilterContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$RpFilterContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$ScXQContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$ScXQContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$SingleSlashRpContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$SingleSlashRpContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$SingleSlashXQContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$SingleSlashXQContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$SomeSatisCondContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$SomeSatisCondContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$StarContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$StarContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$TagNameContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$TagNameContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$TagNameXQContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$TagNameXQContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$TextContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$TextContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$VarContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$VarContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$VarListContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$VarListContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$VarXQContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$VarXQContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$WhereClauseContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$WhereClauseContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser$XqContext.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser$XqContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathParser.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathParser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPathVisitor.class" afterPath="$PROJECT_DIR$/out/production/milestone/xPathVisitor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathBaseListener.class" afterPath="$PROJECT_DIR$/src/xPathBaseListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathBaseVisitor.class" afterPath="$PROJECT_DIR$/src/xPathBaseVisitor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathListener.class" afterPath="$PROJECT_DIR$/src/xPathListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser$SepContext.class" afterPath="$PROJECT_DIR$/src/xPathParser$SepContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathParser.class" afterPath="$PROJECT_DIR$/src/xPathParser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xPathVisitor.class" afterPath="$PROJECT_DIR$/src/xPathVisitor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/milestone/xPath.g4" afterPath="$PROJECT_DIR$/out/production/milestone/xPath.g4" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.java" afterPath="$PROJECT_DIR$/src/App.java" />
-    </list>
+    <list default="true" id="84efe265-160e-487f-87f4-4d47825dd9b6" name="Default" comment="" />
     <ignored path="milestone.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -169,8 +94,8 @@
       <file leaf-file-name="App.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+            <state relative-caret-position="135">
+              <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -586,7 +511,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25099602" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25099602" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -960,8 +885,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+        <state relative-caret-position="135">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
