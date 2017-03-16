@@ -79,6 +79,33 @@ cond        :    xq '=' xq                                           # eq1Cond
 DOC         :    'doc'
             |    'document'
             ;
+
+subxq       :    'for' var 'in' path (',' var 'in' path)* 'where' subcond 'return' subreturn
+            ;
+
+//we first only allow var eq stringConstant and var eq var
+subcond     :    var 'eq' var                                       # varEq1SubCond
+            |    var '='  var                                       # varEq2SubCond
+            |    var '='  StringConstant                            # varStrEq1SubCond
+            |    var 'eq' StringConstant                            # varStrEq2SubCond
+            |    subcond 'and' subcond                              # andSubCond
+            ;
+
+subreturn   :    var                                                # varSubReturn
+            |    subreturn ',' subreturn                            # commaSubReturn
+            |    '<' NAME '>' '{' subreturn '}' '<''/'NAME'>'       # tagSubReturn
+            |    path                                               # xqSubReturn
+            ;
+
+path        :  DOC '(' StringConstant ')'(sep NAME)*               # rootnodePath
+            |  DOC '(' StringConstant ')' (sep NAME)* sep TEXT     # roottextPath
+            |  var  (sep NAME)*                                    # varnodePath
+            |  var  (sep NAME)* sep TEXT                           # vartextPath
+            ;
+
+sep         :  '/'
+            |  '//'
+            ;
 NAME        :    [a-zA-Z0-9._]+ ;
 TEXT        :    'text()'  ;
 WS          :    [ \t\r\n]+ -> skip;

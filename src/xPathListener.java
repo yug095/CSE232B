@@ -592,4 +592,180 @@ public interface xPathListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitNotCond(xPathParser.NotCondContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link xPathParser#subxq}.
+	 * @param ctx the parse tree
+	 */
+	void enterSubxq(xPathParser.SubxqContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link xPathParser#subxq}.
+	 * @param ctx the parse tree
+	 */
+	void exitSubxq(xPathParser.SubxqContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code varEq1SubCond}
+	 * labeled alternative in {@link xPathParser#subcond}.
+	 * @param ctx the parse tree
+	 */
+	void enterVarEq1SubCond(xPathParser.VarEq1SubCondContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code varEq1SubCond}
+	 * labeled alternative in {@link xPathParser#subcond}.
+	 * @param ctx the parse tree
+	 */
+	void exitVarEq1SubCond(xPathParser.VarEq1SubCondContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code varStrEq1SubCond}
+	 * labeled alternative in {@link xPathParser#subcond}.
+	 * @param ctx the parse tree
+	 */
+	void enterVarStrEq1SubCond(xPathParser.VarStrEq1SubCondContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code varStrEq1SubCond}
+	 * labeled alternative in {@link xPathParser#subcond}.
+	 * @param ctx the parse tree
+	 */
+	void exitVarStrEq1SubCond(xPathParser.VarStrEq1SubCondContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code varStrEq2SubCond}
+	 * labeled alternative in {@link xPathParser#subcond}.
+	 * @param ctx the parse tree
+	 */
+	void enterVarStrEq2SubCond(xPathParser.VarStrEq2SubCondContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code varStrEq2SubCond}
+	 * labeled alternative in {@link xPathParser#subcond}.
+	 * @param ctx the parse tree
+	 */
+	void exitVarStrEq2SubCond(xPathParser.VarStrEq2SubCondContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code andSubCond}
+	 * labeled alternative in {@link xPathParser#subcond}.
+	 * @param ctx the parse tree
+	 */
+	void enterAndSubCond(xPathParser.AndSubCondContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code andSubCond}
+	 * labeled alternative in {@link xPathParser#subcond}.
+	 * @param ctx the parse tree
+	 */
+	void exitAndSubCond(xPathParser.AndSubCondContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code varEq2SubCond}
+	 * labeled alternative in {@link xPathParser#subcond}.
+	 * @param ctx the parse tree
+	 */
+	void enterVarEq2SubCond(xPathParser.VarEq2SubCondContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code varEq2SubCond}
+	 * labeled alternative in {@link xPathParser#subcond}.
+	 * @param ctx the parse tree
+	 */
+	void exitVarEq2SubCond(xPathParser.VarEq2SubCondContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code commaSubReturn}
+	 * labeled alternative in {@link xPathParser#subreturn}.
+	 * @param ctx the parse tree
+	 */
+	void enterCommaSubReturn(xPathParser.CommaSubReturnContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code commaSubReturn}
+	 * labeled alternative in {@link xPathParser#subreturn}.
+	 * @param ctx the parse tree
+	 */
+	void exitCommaSubReturn(xPathParser.CommaSubReturnContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code varSubReturn}
+	 * labeled alternative in {@link xPathParser#subreturn}.
+	 * @param ctx the parse tree
+	 */
+	void enterVarSubReturn(xPathParser.VarSubReturnContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code varSubReturn}
+	 * labeled alternative in {@link xPathParser#subreturn}.
+	 * @param ctx the parse tree
+	 */
+	void exitVarSubReturn(xPathParser.VarSubReturnContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code tagSubReturn}
+	 * labeled alternative in {@link xPathParser#subreturn}.
+	 * @param ctx the parse tree
+	 */
+	void enterTagSubReturn(xPathParser.TagSubReturnContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code tagSubReturn}
+	 * labeled alternative in {@link xPathParser#subreturn}.
+	 * @param ctx the parse tree
+	 */
+	void exitTagSubReturn(xPathParser.TagSubReturnContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code xqSubReturn}
+	 * labeled alternative in {@link xPathParser#subreturn}.
+	 * @param ctx the parse tree
+	 */
+	void enterXqSubReturn(xPathParser.XqSubReturnContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code xqSubReturn}
+	 * labeled alternative in {@link xPathParser#subreturn}.
+	 * @param ctx the parse tree
+	 */
+	void exitXqSubReturn(xPathParser.XqSubReturnContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code rootnodePath}
+	 * labeled alternative in {@link xPathParser#path}.
+	 * @param ctx the parse tree
+	 */
+	void enterRootnodePath(xPathParser.RootnodePathContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code rootnodePath}
+	 * labeled alternative in {@link xPathParser#path}.
+	 * @param ctx the parse tree
+	 */
+	void exitRootnodePath(xPathParser.RootnodePathContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code roottextPath}
+	 * labeled alternative in {@link xPathParser#path}.
+	 * @param ctx the parse tree
+	 */
+	void enterRoottextPath(xPathParser.RoottextPathContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code roottextPath}
+	 * labeled alternative in {@link xPathParser#path}.
+	 * @param ctx the parse tree
+	 */
+	void exitRoottextPath(xPathParser.RoottextPathContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code varnodePath}
+	 * labeled alternative in {@link xPathParser#path}.
+	 * @param ctx the parse tree
+	 */
+	void enterVarnodePath(xPathParser.VarnodePathContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code varnodePath}
+	 * labeled alternative in {@link xPathParser#path}.
+	 * @param ctx the parse tree
+	 */
+	void exitVarnodePath(xPathParser.VarnodePathContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code vartextPath}
+	 * labeled alternative in {@link xPathParser#path}.
+	 * @param ctx the parse tree
+	 */
+	void enterVartextPath(xPathParser.VartextPathContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code vartextPath}
+	 * labeled alternative in {@link xPathParser#path}.
+	 * @param ctx the parse tree
+	 */
+	void exitVartextPath(xPathParser.VartextPathContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link xPathParser#sep}.
+	 * @param ctx the parse tree
+	 */
+	void enterSep(xPathParser.SepContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link xPathParser#sep}.
+	 * @param ctx the parse tree
+	 */
+	void exitSep(xPathParser.SepContext ctx);
 }

@@ -13,6 +13,7 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
+import org.omg.PortableInterceptor.USER_EXCEPTION;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -28,6 +29,7 @@ import java.util.List;
 
 import java.io.File;
 import java.io.StringWriter;
+import java.util.Queue;
 import java.util.Set;
 
 public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHelper {
@@ -172,11 +174,33 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
   }
 
   public boolean visitEq1Filter (xPathParser.Eq1FilterContext ctx, Node n) {
-    return true;
+    xPathParser.RpContext rp1 =ctx.rp(0);
+    xPathParser.RpContext rp2 = ctx.rp(1);
+    List<Node> l1 = relaTive(rp1, n);
+    List<Node> l2 = relaTive(rp2, n);
+    for(Node i : l1) {
+      for(Node j : l2) {
+        if(i.isEqualNode(j)) {
+          return true;
+        }
+      }
+    }
+    return false;
   }
 
   public boolean visitEq2Filter (xPathParser.Eq2FilterContext ctx, Node n) {
-    return true;
+    xPathParser.RpContext rp1 =ctx.rp(0);
+    xPathParser.RpContext rp2 = ctx.rp(1);
+    List<Node> l1 = relaTive(rp1, n);
+    List<Node> l2 = relaTive(rp2, n);
+    for(Node i : l1) {
+      for(Node j : l2) {
+        if(i.isEqualNode(j)) {
+          return true;
+        }
+      }
+    }
+    return false;
   }
 
   public boolean visitIs1Filter (xPathParser.Is1FilterContext ctx, Node n) {
@@ -508,18 +532,25 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
     List<Node> xq2List = visitXQ(xq2);
     List<Map<String, List<Node>>> mapList = new ArrayList<>();
 
+    System.out.println("xq1list size is : " + xq1List.size());
+    System.out.println("xq2list size is : " + xq2List.size());
     for(int i=0;i<varListSize;i++) {
       String varName = varList1.get(i);
+//      System.out.println("varName is : " + varName);
       Map<String, List<Node>> map = new HashMap<>();
       for(Node node : xq1List) {
         String key0 = nodeToString(((Element) node).getElementsByTagName(varName).item(0));
-        System.out.println("node to string key is " + key0);
-        String key = key0.substring(2+varName.length(), key0.length()-2-1-varName.length());
+        String starter = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
+        System.out.println("node to string key0 is " + key0);
+        String key = key0.substring(starter.length()+varName.length()+2, key0.length()-2-1-varName.length());
+        System.out.println("node to string key is " + key);
         List<Node> tmpList;
         if(map.containsKey(key)) {
+//          System.out.println("contain");
           tmpList = map.get(key);
           tmpList.add(node.cloneNode(true));
         } else {
+//          System.out.println("not contain");
           tmpList = new ArrayList<>();
           tmpList.add(node.cloneNode(true));
         }
@@ -534,8 +565,10 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
       for(int i=0;i<varListSize;i++) {
         String varName = varList2.get(i);
         String key0 = nodeToString(((Element) node).getElementsByTagName(varName).item(0));
-        String key = key0.substring(2+varName.length(), key0.length()-2-1-varName.length());
-
+//        System.out.println("xq2List node to key0 string is : " + key0);
+        String starter = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
+        String key = key0.substring(starter.length()+varName.length()+2, key0.length()-2-1-varName.length());
+//        System.out.println("xq2List node to key string is : " + key);
 
         //check if list(i) contains key, if not ,break
         if(!mapList.get(i).containsKey(key)) {
@@ -543,6 +576,7 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
         }
         //else : update the compare list;
         else {
+//          System.out.println("does this ever into?");
           if(i==0) nodeJoinList.addAll(mapList.get(i).get(key));
           else {
             List<Node> getList = mapList.get(i).get(key);
@@ -570,7 +604,7 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
       }
       retList.addAll(nodeJoinList);
     }
-
+    System.out.println("retList size is : " + retList.size());
     return retList;
   }
 
@@ -745,7 +779,6 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
   }
 
 
-
   public void display(Node node) {
       System.out.println('<' + node.getNodeName() + '>');
       if (node.getChildNodes() != null) {
@@ -757,4 +790,334 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
       }
       System.out.println("</" + node.getNodeName() + '>');
     }
+
+
+  public Set<String> usedRoots;
+  public Map<String, Map<String, List<String>>> eqMap;
+  public Map<String, Set<String>> graphMap;
+  public Map<String, String> rootMap;
+  public Map<String, List<String>> pathMap;
+  public Map<String, List<String>> whereMap;
+  public Set<String> sortSet;
+  public Map<String, List<String>> retVarMap;
+  String joinString;
+  String retString;
+
+
+  @Override
+  public List<Node> visitSubxq(xPathParser.SubxqContext ctx) {
+
+    usedRoots = new HashSet<>();
+    rootMap = new HashMap<>();
+    eqMap = new HashMap<>();
+    graphMap = new HashMap<>();
+    pathMap = new HashMap<>();
+    whereMap = new HashMap<>();
+    retVarMap = new HashMap<>();
+    sortSet = new LinkedHashSet<>();
+
+
+    //Construct rootMap
+    List<xPathParser.VarContext> varList = ctx.var();
+    List<xPathParser.PathContext> pathList = ctx.path();
+    int vpSize = varList.size();
+    for(int i=0;i<vpSize;i++) {
+      if(pathList.get(i) instanceof xPathParser.RootnodePathContext ||
+        pathList.get(i) instanceof xPathParser.RoottextPathContext) {
+          String rootName = varList.get(i).NAME().getText();
+          rootMap.put(rootName, rootName);
+          graphMap.put(rootName, new HashSet<>());
+      } else {
+        String childName = varList.get(i).NAME().getText();
+        xPathParser.VarContext var;
+        if(pathList.get(i) instanceof xPathParser.VarnodePathContext) {
+          var = ((xPathParser.VarnodePathContext) pathList.get(i)).var();
+        } else {
+          var = ((xPathParser.VartextPathContext)pathList.get(i)).var();
+        }
+        String parentName = var.NAME().getText();
+        rootMap.put(childName, parentName);
+      }
+    }
+
+    //Construct eqMap and whereMap
+    constructEqMap(ctx.subcond());
+
+
+    //Construct pathMap
+    for(int i=0;i<vpSize;i++) {
+      String varName = varList.get(i).NAME().getText();
+      String inPath = "" + varList.get(i).getText() + " in" + " " + pathList.get(i).getText() ;
+
+      String root = getRoot(varList.get(i).NAME().getText());
+      List<String> inPList = pathMap.getOrDefault(root, new ArrayList<>());
+      List<String> varNList = retVarMap.getOrDefault(root, new ArrayList<>());
+      inPList.add(inPath);
+      varNList.add(varName);
+      pathMap.put(root, inPList);
+      retVarMap.put(root, varNList);
+    }
+
+
+    //Construct graphMap
+    for(String root : graphMap.keySet()) {
+      Map<String, List<String>> eqmap = eqMap.getOrDefault(root, new HashMap<>());
+      graphMap.get(root).addAll(eqmap.keySet());
+    }
+
+
+    //Construct returnList
+    retString = constructRetList(ctx.subreturn()).replaceAll(", }", " }");
+
+
+    //Construct sortSet
+    constructSortSet();
+
+    //Construct joinString;
+    List<String> sortList = new ArrayList<>(sortSet);
+    String first = sortList.get(0);
+    usedRoots.add(first);
+    String forString = getFor(pathMap.get(first));
+    List<String> whereList = whereMap.get(first);
+    String whereString = "";
+    if(whereList!=null) {
+      whereString = getWhere(whereMap.get(first));
+    }
+    String retVarString = getReturn(retVarMap.get(first));
+    String original = "";
+    original += forString + whereString + retVarString;
+
+    for(int i=1;i<sortList.size();i++) {
+      String next = sortList.get(i);
+      boolean last = false;
+      if(i==sortList.size()-1) {
+        last = true;
+      }
+      original = joinNext(original, next,usedRoots, last);
+    }
+
+    joinString = "";
+    joinString += original + "return " + retString;
+
+    System.out.println("Now we test!");
+    System.out.println();
+    System.out.println("rootMap is : " + rootMap);
+    System.out.println("eqMap is : " + eqMap);
+    System.out.println("whereMap is : " + whereMap);
+    System.out.println("pathMap is : " + pathMap);
+    System.out.println("graph map is : " + graphMap);
+    System.out.println("retString is : " + retString);
+    System.out.println("sortSet is : " + sortSet);
+    System.out.println("retVarMap is : " + retVarMap);
+    System.out.println("final join String is \n" + joinString);
+    System.out.println();
+    System.out.println("Test Done!");
+
+    return null;
+  }
+
+  public String constructRetList(xPathParser.SubreturnContext ctx) {
+    if(ctx instanceof xPathParser.TagSubReturnContext) {
+      String tagName = ((xPathParser.TagSubReturnContext) ctx).NAME(0).getText();
+      String middle = constructRetList(((xPathParser.TagSubReturnContext) ctx).subreturn());
+      return String.format("<%s>{ %s }</%s>", tagName,middle,tagName);
+    } else if(ctx instanceof xPathParser.CommaSubReturnContext) {
+      return constructRetList(((xPathParser.CommaSubReturnContext) ctx).subreturn(0)) + " "
+                  + constructRetList(((xPathParser.CommaSubReturnContext) ctx).subreturn(1));
+    } else if (ctx instanceof xPathParser.VarSubReturnContext) {
+//      System.out.println("Ever in side?????");
+      return "$tuple/" + ((xPathParser.VarSubReturnContext) ctx).var().getText() + "/*,";
+    } else {
+      if(((xPathParser.XqSubReturnContext)ctx).path() instanceof xPathParser.VarnodePathContext) {
+        String var = ((xPathParser.VarnodePathContext) ((xPathParser.XqSubReturnContext) ctx).path()).var().getText();
+        return "$tuple/" + var + "/*" +
+          ((xPathParser.VarnodePathContext) ((xPathParser.XqSubReturnContext) ctx).path()).getText().
+            substring(var.length()) + ",";
+      } else {
+        String var = ((xPathParser.VartextPathContext) ((xPathParser.XqSubReturnContext) ctx).path()).var().getText();
+        return "$tuple/" + var + "/*" +
+          ((xPathParser.VartextPathContext) ((xPathParser.XqSubReturnContext) ctx).path()).getText().
+            substring(var.length()) + ",";
+      }
+    }
+  }
+
+  public void constructEqMap(xPathParser.SubcondContext ctx) {
+//    System.out.println("inside construct eqMap!");
+    if(ctx instanceof xPathParser.VarStrEq1SubCondContext || ctx instanceof xPathParser.VarStrEq2SubCondContext) {
+      xPathParser.VarContext var;
+      if(ctx instanceof xPathParser.VarStrEq1SubCondContext) {
+        var = ((xPathParser.VarStrEq1SubCondContext) ctx).var();
+      } else {
+        var = ((xPathParser.VarStrEq2SubCondContext) ctx).var();
+      }
+      List<String> whereList = whereMap.getOrDefault(getRoot(var.NAME().getText()), new ArrayList<>());
+      whereList.add(ctx.getText());
+      whereMap.put(getRoot(var.NAME().getText()), whereList);
+    } else if(ctx instanceof xPathParser.VarEq1SubCondContext || ctx instanceof xPathParser.VarEq2SubCondContext) {
+        String  var1;
+        String  var2;
+        if(ctx instanceof xPathParser.VarEq1SubCondContext) {
+           var1 = ((xPathParser.VarEq1SubCondContext) ctx).var().get(0).NAME().getText();
+           var2 = ((xPathParser.VarEq1SubCondContext) ctx).var().get(1).NAME().getText();
+        } else {
+            var1 = ((xPathParser.VarEq2SubCondContext) ctx).var().get(0).NAME().getText();
+            var2 = ((xPathParser.VarEq2SubCondContext) ctx).var().get(1).NAME().getText();
+        }
+        if(getRoot(var1).equals(getRoot(var2))) {
+          List<String> whereList = whereMap.getOrDefault(getRoot(var1), new ArrayList<>());
+          whereList.add(ctx.getText());
+          whereMap.put(getRoot(var1), whereList );
+        } else {
+          String root1 = getRoot(var1);
+          String root2 = getRoot(var2);
+          Map<String, List<String>> subMap1 = eqMap.getOrDefault(root1, new HashMap<>());
+          Map<String, List<String>> subMap2 = eqMap.getOrDefault(root2, new HashMap<>());
+          List<String> subList1 = subMap1.getOrDefault(root2, new ArrayList<>());
+          List<String> subList2 = subMap2.getOrDefault(root1, new ArrayList<>());
+          subList1.add(var1);
+          subList2.add(var2);
+          subMap1.put(root2, subList1);
+          eqMap.put(root1, subMap1);
+          subMap2.put(root1, subList2);
+          eqMap.put(root2, subMap2);
+        }
+    } else {
+      xPathParser.SubcondContext subcond1 = ((xPathParser.AndSubCondContext) ctx).subcond(0);
+      xPathParser.SubcondContext subcond2 = ((xPathParser.AndSubCondContext) ctx).subcond(1);
+      constructEqMap(subcond1);
+      constructEqMap(subcond2);
+    }
+  }
+
+  public String getRoot(String varName) {
+//    System.out.println("varName is " + varName);
+    while(!rootMap.get(varName).equals(varName)) {
+      varName = rootMap.get(varName);
+    }
+    return rootMap.get(varName);
+  }
+
+  public void constructSortSet() {
+    int rootNum = graphMap.size();
+    Queue<String> q = new LinkedList<>();
+    List<String> rootList = new ArrayList<>();
+    rootList.addAll(graphMap.keySet());
+    if(rootList.isEmpty()) {
+      System.err.println("No root error!");
+    }
+    q.offer(rootList.get(0));
+    while(sortSet.size()<rootNum) {
+      while(!q.isEmpty()) {
+        String top = q.poll();
+        sortSet.add(top);
+        Set<String> next = graphMap.get(top);
+        for(String n : next) {
+          if(!sortSet.contains(n)) {
+            q.offer(n);
+          }
+        }
+      }
+      if(sortSet.size()<rootNum) {
+        for(String root : graphMap.keySet()) {
+          if(!sortSet.contains(root)) {
+            q.offer(root);
+            break;
+          }
+        }
+      }
+    }
+  }
+
+  public String getFor(List<String> strList) {
+    String ret = "for ";
+    for(int i=0;i<strList.size();i++) {
+      if(i!=strList.size()-1) {
+        ret += strList.get(i) + ", \n";
+      } else {
+        ret += strList.get(i) + " \n";
+      }
+    }
+    return ret;
+  }
+
+  public String getWhere(List<String> strList) {
+    String ret = "where ";
+    for(int i=0;i<strList.size();i++) {
+      if(i!=strList.size()-1) {
+        ret += strList.get(i) + ", \n";
+      } else {
+        ret += strList.get(i) + " \n";
+      }
+    }
+    return ret;
+  }
+
+  public String getReturn(List<String> strList) {
+    String ret = "return <tuple>{\n";
+    for(int i=0;i<strList.size();i++) {
+      String varName = strList.get(i);
+      if(i != strList.size()-1) {
+        ret += String.format("<%s>{$%s}</%s>, \n", varName,varName,varName);
+      } else {
+        ret += String.format("<%s>{$%s}</%s> \n", varName,varName,varName);
+      }
+    }
+    ret += "}</tuple>, \n";
+    return ret;
+  }
+
+  public String joinNext(String original, String next, Set<String> usedRoots, boolean last) {
+    String ret = "join(";
+    String forString = getFor(pathMap.get(next));
+    List<String> whereList = whereMap.get(next);
+    String whereString = "";
+    if(whereList!=null) {
+      whereString = getWhere(whereMap.get(next));
+    }
+    String retVarString = getReturn(retVarMap.get(next));
+    original += forString + whereString + retVarString;
+    List<String> first = new ArrayList<>();
+    List<String> second = new ArrayList<>();
+    for(String usedRoot : usedRoots) {
+      if(!eqMap.containsKey(usedRoot)) continue;
+      if(eqMap.get(usedRoot).containsKey(next)) {
+        first.addAll(eqMap.get(usedRoot).get(next));
+        second.addAll(eqMap.get(next).get(usedRoot));
+      }
+    }
+    String f = "[";
+    String s = "[";
+    for(int i=0;i<first.size();i++) {
+      if(i!=first.size()-1) {
+        f += first.get(i) + ", ";
+        s += second.get(i) + ", ";
+      } else {
+        f += first.get(i) + "]";
+        s += second.get(i) + "]";
+      }
+    }
+    ret += original + f + ",\n" + s + ")";
+    if(last) {
+      ret += "\n";
+    } else {
+      ret += ",\n";
+    }
+    usedRoots.add(next);
+    return ret;
+  }
+  public List<List<String>> addRoot(String newRoot, Set<String> usedRoots, Map<String, Map<String, List<String>>> eqMap) {
+    // TODO: 17/3/14
+    return null;
+  }
+  public List<String> sortList(List<String> list, Map<String, Set<String>> graphMap) {
+    List<String> ret = new ArrayList<>();
+    Set<String> set = new HashSet<>();
+    if(list.size()==0) {
+      System.err.println("Err: Root list is empty!");
+      return null;
+    }
+    // TODO: 17/3/14
+    return null;
+  }
 }

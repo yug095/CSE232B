@@ -352,4 +352,107 @@ public interface xPathVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitNotCond(xPathParser.NotCondContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link xPathParser#subxq}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSubxq(xPathParser.SubxqContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code varEq1SubCond}
+	 * labeled alternative in {@link xPathParser#subcond}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVarEq1SubCond(xPathParser.VarEq1SubCondContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code varStrEq1SubCond}
+	 * labeled alternative in {@link xPathParser#subcond}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVarStrEq1SubCond(xPathParser.VarStrEq1SubCondContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code varStrEq2SubCond}
+	 * labeled alternative in {@link xPathParser#subcond}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVarStrEq2SubCond(xPathParser.VarStrEq2SubCondContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code andSubCond}
+	 * labeled alternative in {@link xPathParser#subcond}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAndSubCond(xPathParser.AndSubCondContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code varEq2SubCond}
+	 * labeled alternative in {@link xPathParser#subcond}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVarEq2SubCond(xPathParser.VarEq2SubCondContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code commaSubReturn}
+	 * labeled alternative in {@link xPathParser#subreturn}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCommaSubReturn(xPathParser.CommaSubReturnContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code varSubReturn}
+	 * labeled alternative in {@link xPathParser#subreturn}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVarSubReturn(xPathParser.VarSubReturnContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code tagSubReturn}
+	 * labeled alternative in {@link xPathParser#subreturn}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTagSubReturn(xPathParser.TagSubReturnContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code xqSubReturn}
+	 * labeled alternative in {@link xPathParser#subreturn}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitXqSubReturn(xPathParser.XqSubReturnContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code rootnodePath}
+	 * labeled alternative in {@link xPathParser#path}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitRootnodePath(xPathParser.RootnodePathContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code roottextPath}
+	 * labeled alternative in {@link xPathParser#path}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitRoottextPath(xPathParser.RoottextPathContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code varnodePath}
+	 * labeled alternative in {@link xPathParser#path}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVarnodePath(xPathParser.VarnodePathContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code vartextPath}
+	 * labeled alternative in {@link xPathParser#path}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVartextPath(xPathParser.VartextPathContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link xPathParser#sep}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSep(xPathParser.SepContext ctx);
 }
