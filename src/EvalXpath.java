@@ -18,6 +18,15 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
+
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.io.PrintWriter;
+import java.io.Writer;
 import java.lang.*;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -541,9 +550,9 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
       for(Node node : xq1List) {
         String key0 = nodeToString(((Element) node).getElementsByTagName(varName).item(0));
         String starter = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
-        System.out.println("node to string key0 is " + key0);
+//        System.out.println("node to string key0 is " + key0);
         String key = key0.substring(starter.length()+varName.length()+2, key0.length()-2-1-varName.length());
-        System.out.println("node to string key is " + key);
+//        System.out.println("node to string key is " + key);
         List<Node> tmpList;
         if(map.containsKey(key)) {
 //          System.out.println("contain");
@@ -605,6 +614,10 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
       retList.addAll(nodeJoinList);
     }
     System.out.println("retList size is : " + retList.size());
+//    System.out.println("Now print join retlist");
+//    for(Node retNode : retList) {
+//      display(retNode);
+//    }
     return retList;
   }
 
@@ -779,18 +792,46 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
   }
 
 
+//  PrintStream resultStream = null;
+//
+//  public void createStream() {
+//
+//  }
+//  try (PrintStream out = new PrintStream(new FileOutputStream("/Users/gaoyue/Desktop/CSE_232b/joinString.txt"))) {
+//    out.print(joinString);
+//  } catch (FileNotFoundException e) {
+//    e.printStackTrace();
+//  }
+
+
+  StringBuilder sb = new StringBuilder();
   public void display(Node node) {
+      sb.append('<' + node.getNodeName() + ">\n");
       System.out.println('<' + node.getNodeName() + '>');
       if (node.getChildNodes() != null) {
         for (int i = 0; i < node.getChildNodes().getLength(); i++) {
           if (node.getChildNodes().item(i).getNodeName() == "#text") {
+//            out.println("start to print text");
+            sb.append(node.getTextContent() + "\n");
             System.out.println(node.getTextContent());
           } else display(node.getChildNodes().item(i));
         }
       }
-      System.out.println("</" + node.getNodeName() + '>');
-    }
+      sb.append("</" + node.getNodeName() + '>');
+      System.out.println("</" + node.getNodeName() + ">\n");
+  }
 
+  public void getString() {
+    if(sb.length()==0) {
+      System.err.println("nothing to display");
+    }
+    System.out.println(" Now to display sb string" + sb.toString());
+    try (PrintStream out = new PrintStream(new FileOutputStream("/Users/gaoyue/Desktop/CSE_232b/newresult.xml"))) {
+      out.print(sb.toString());
+    } catch (FileNotFoundException e) {
+      e.printStackTrace();
+    }
+  }
 
   public Set<String> usedRoots;
   public Map<String, Map<String, List<String>>> eqMap;
@@ -896,9 +937,18 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
       original = joinNext(original, next,usedRoots, last);
     }
 
+
+    retString = retString.replaceAll("\\$", "<sub> {\\$");
+    retString = retString.replaceAll("\\*", "* }</sub>");
+
     joinString = "";
     joinString += "for $tuple in " + original + "return " + retString;
 
+    try (PrintStream out = new PrintStream(new FileOutputStream("/Users/gaoyue/Desktop/CSE_232b/joinString.txt"))) {
+      out.print(joinString);
+    } catch (FileNotFoundException e) {
+      e.printStackTrace();
+    }
     System.out.println("Now we test!");
     System.out.println();
     System.out.println("rootMap is : " + rootMap);
@@ -1108,19 +1158,5 @@ public class EvalXpath extends xPathBaseVisitor<List<Node>>  implements xPathHel
     }
     usedRoots.add(next);
     return ret;
-  }
-  public List<List<String>> addRoot(String newRoot, Set<String> usedRoots, Map<String, Map<String, List<String>>> eqMap) {
-    // TODO: 17/3/14
-    return null;
-  }
-  public List<String> sortList(List<String> list, Map<String, Set<String>> graphMap) {
-    List<String> ret = new ArrayList<>();
-    Set<String> set = new HashSet<>();
-    if(list.size()==0) {
-      System.err.println("Err: Root list is empty!");
-      return null;
-    }
-    // TODO: 17/3/14
-    return null;
   }
 }
